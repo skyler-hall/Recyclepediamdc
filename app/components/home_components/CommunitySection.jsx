@@ -3,9 +3,9 @@ const CommunitySection = () => {
     return (
         <div className="mt-24 mb-6">
             <div className="mb-14 flex items-center justify-center">
-                <hr className=" border-4 border-black w-1/3 h-full" />
+                <hr className=" border-4 border-[#DBF4D2] w-1/3 h-full" />
                 <h3 className="text-3xl md:text-4xl mx-6 text-center uppercase">In the Community</h3>
-                <hr className=" border-4 border-black w-1/3 h-full" />
+                <hr className=" border-4 border-[#DBF4D2] w-1/3 h-full" />
             </div>
             <div className="md:flex justify-center items-center">
                 <div className="md:w-1/2 p-8">
