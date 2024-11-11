@@ -16,13 +16,13 @@ const Footer = () => {
       </div>
       <div className="mt-4 flex justify-center space-x-1 items-center">
         <a href="https://www.facebook.com" className="text-white hover:text-gray-300">
-          <Image src="/fb-icon.png" alt="Facebook" width={100} height={100} objectFit="contain" />
+          <Image src="/fb-icon.png" alt="Facebook" width={50} height={50} objectFit="contain" />
         </a>
         <a href="https://www.twitter.com" className="text-white hover:text-gray-300">
-          <Image src="/x-icon.png" alt="Twitter" width={150} height={150} objectFit="contain" />
+          <Image src="/x-icon.png" alt="Twitter" width={75} height={75} objectFit="contain" />
         </a>
         <a href="https://www.instagram.com" className="text-white hover:text-gray-300">
-          <Image src="/Instagram-icon.png" alt="Instagram" width={100} height={100} objectFit="contain" />
+          <Image src="/Instagram-icon.png" alt="Instagram" width={50} height={50} objectFit="contain" />
         </a>
       </div>
     </footer>

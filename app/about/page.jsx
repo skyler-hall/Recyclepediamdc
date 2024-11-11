@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -24,9 +25,14 @@ const About = () => {
           <p className="mt-4 text-gray-700">
             Since 2006, Dream in Green (DIG) has empowered individuals, especially youth, to take a leading role in addressing climate change and other environmental challenges facing South Florida. By assisting schools, households, local governments, and businesses, DIG helps reduce their environmental footprint. Through partnerships within our community, we develop, implement, and oversee educational programs and workshops that promote environmentally sustainable behaviors among all age groups, with a particular emphasis on K-12 students.
           </p>
+          <Link href="/learn">
+            <button className="mt-6 px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+              Learn More
+            </button>
+          </Link>
         </div>
         <div className="lg:w-1/2 p-4">
-        <Image src="/OurStory.jpg" alt="Our Story" width={400} height={300} className="rounded-lg curved-image-right" />
+        <Image src="/OurStory.jpg" alt="Our Story" width={400} height={300} className="rounded-lg curved-image-right animate-slideInFromLeft" />
         </div>
       </section>
 
@@ -60,7 +66,7 @@ const About = () => {
         </div>
 
         <div className="lg:w-1/2 p-4">
-        <Image src="/OurMission.jpg" alt="Our Mission" width={400} height={300} className="rounded-lg curved-image-left" />
+        <Image src="/OurMission.jpg" alt="Our Mission" width={400} height={300} className="rounded-lg curved-image-left animate-slideInFromLeft" />
         </div>
       </section>
 
