@@ -12,12 +12,10 @@ import Calendar from "./components/home_components/Calendar"
 export default function Home() {
   return (
     <div className="bg-white px-2 py-10 mx-auto text-black max-w-7xl">
-      <Navbar />
       <Header />
       <PageCards />
       <NewsletterBar />
       <CommunitySection />
-      <Footer />
     </div>
   )
 }
