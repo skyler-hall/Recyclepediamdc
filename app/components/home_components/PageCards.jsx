@@ -36,7 +36,7 @@ const PageCards = () => {
                 <ul className="flex justify-between flex-wrap md:flex-nowrap">
                     {
                         pages.slice(0, 3).map((page, index) => (
-                            <li key={index} className="p-4 m-2">
+                            <li key={index} className="p-4 m-2 w-full">
                                 <NavigationCard navCardDetails={page}/>
                             </li>
                         ))
