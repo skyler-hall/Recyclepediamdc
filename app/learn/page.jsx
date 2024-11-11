@@ -167,25 +167,33 @@ function Learn() {
         </div>
 
        {/* section 3 */}
-
-      <div className="relative mt-10">
-          <h1 className="text-4xl font-bold text-center w-[30%] p-4 bg-[#234E13] text-white">
+       <div className='grid grid-cols-2 w-[80%]'>
+      <div className="relative mt-10 ">
+          <h1 className="text-4xl font-bold text-center w-[100%] p-4 bg-[#234E13] text-white">
              Watch and Learn
            </h1>
   
-      <div className="video-grid flex flex-col gap-6 justify-center mt-6 w-[30%] px-4">
-        <div className="video flex justify-content-center w-full rounded-lg overflow-hidden shadow-lg">
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/Fex-wvrOZf4?si=nfK5j6JH8LKNTeic" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy='strict-origin-when-cross-origin' allowFullScreen></iframe>
-        </div>
+      <div className="video-grid flex flex-col gap-6 justify-center mt-6 w-100%] px-4">
+          <div className="video flex justify-content-center w-full rounded-lg overflow-hidden shadow-lg">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/Fex-wvrOZf4?si=nfK5j6JH8LKNTeic" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy='strict-origin-when-cross-origin' allowFullScreen></iframe>
+          </div>
 
-        <div className="video flex justify-center w-full rounded-lg overflow-hidden shadow-lg">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/cNPEH0GOhRw?si=5REcFjBYd5PPpjms" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy='strict-origin-when-cross-origin' allowFullScreen></iframe>     </div>
+          <div className="video flex justify-center w-full rounded-lg overflow-hidden shadow-lg">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/cNPEH0GOhRw?si=5REcFjBYd5PPpjms" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy='strict-origin-when-cross-origin' allowFullScreen></iframe>     </div>
       
-       </div>
+          </div>
 
       </div>
-      
-      <Footer/>
+
+
+      {/* <div className="relative mt-10 w-[100%]">
+        <img src="/img/challenge.png" alt="" />
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel repellendus reprehenderit error dolorum! Voluptatum quis, velit maiores, quo sed repellendus qui deleniti asperiores exercitationem ipsum tempore dignissimos ratione deserunt.</p>
+      </div> */}
+
+      </div>
+      {/* <Footer/> */}
     </div>
     
   );
