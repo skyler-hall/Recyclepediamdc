@@ -1,4 +1,4 @@
-"use client"; // Ensure that this component is treated as a client-side component
+"use client";
 
 import { FaSearch } from "react-icons/fa"; 
 import { useState } from "react";

@@ -1,5 +1,3 @@
-// src/components/CitySelector.js
-
 const CitySelector = ({ onCityChange }) => {
     const cities = ["Bal Harbour", "Bay Harbor Islands", "Biscayne Park", "Coral Gables", "Cutler Bay", "Doral", "El Portal", "Florida City", "Golden Beach", "Hialeah",
     "Hialeah Gardens", "Homestead", "Indian Creek", "Key Biscayne", "Medley", "Miami", "Miami Beach", "Miami Gardens", "Miami Lakes", "Miami Shores", "Miami Springs",
@@ -12,7 +10,7 @@ const CitySelector = ({ onCityChange }) => {
           onChange={(e) => onCityChange(e.target.value)}
           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
         >
-          <option value="">Select a municipality</option> {/* Updated the placeholder text */}
+          <option value="">Select a municipality</option>
           {cities.map((city) => (
             <option key={city} value={city}>
               {city}
