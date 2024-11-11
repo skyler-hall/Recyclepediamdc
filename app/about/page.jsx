@@ -1,21 +1,51 @@
 "use client"; 
-import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 import Image from 'next/image';
-import Footer from '../components/Footer';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isInView1, setIsInView1] = useState(false);
+  const [isInView2, setIsInView2] = useState(false);
+
+  const imageRef1 = useRef(null);
+  const imageRef2 = useRef(null);
 
   const toggleExpansion = () => {
     setIsExpanded(!isExpanded);
   };
 
+  useEffect(() => {
+    const options = {
+      root: null, // Use the viewport
+      rootMargin: "0px",
+      threshold: 0.1, // Trigger when 10% of the element is in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === imageRef1.current) {
+          setIsInView1(entry.isIntersecting);
+        }
+        if (entry.target === imageRef2.current) {
+          setIsInView2(entry.isIntersecting);
+        }
+      });
+    }, options);
+
+    if (imageRef1.current) observer.observe(imageRef1.current);
+    if (imageRef2.current) observer.observe(imageRef2.current);
+
+    return () => {
+      if (imageRef1.current) observer.unobserve(imageRef1.current);
+      if (imageRef2.current) observer.unobserve(imageRef2.current);
+    };
+  }, []);
   return (
     <div className="bg-white"> 
       <div className="sticky top-0 z-50 shadow-md">
-        <Header />
+        <Navbar />
       </div>
 
       {/* Our Story Section */}
@@ -32,7 +62,7 @@ const About = () => {
           </Link>
         </div>
         <div className="lg:w-1/2 p-4">
-        <Image src="/OurStory.jpg" alt="Our Story" width={400} height={300} className="rounded-lg curved-image-right animate-slideInFromLeft" />
+        <Image  ref={imageRef1} src="/OurStory.jpg" alt="Our Story" width={400} height={300}  className={`curved-image-right rounded-lg transition-transform duration-700 ease-out ${isInView1 ? 'animate-slideInFromRight' : 'opacity-0'}`} />
         </div>
       </section>
 
@@ -66,7 +96,7 @@ const About = () => {
         </div>
 
         <div className="lg:w-1/2 p-4">
-        <Image src="/OurMission.jpg" alt="Our Mission" width={400} height={300} className="rounded-lg curved-image-left animate-slideInFromLeft" />
+        <Image ref={imageRef2} src="/OurMission.jpg" alt="Our Mission" width={400} height={300} className={`curved-image-left rounded-lg transition-transform duration-700 ease-out ${isInView2 ? 'animate-slideInFromLeft' : 'opacity-0'}`} />
         </div>
       </section>
 
@@ -84,9 +114,8 @@ const About = () => {
     <Image src="/DIGLogo.png" alt="DiG" width={120} height={50} className="rounded-lg" />
   </div>
 </section>
-
       {/* Footer Section */}
-      <Footer />
+
     </div>
   );
 };
