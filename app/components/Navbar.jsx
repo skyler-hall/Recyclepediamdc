@@ -65,10 +65,7 @@ function Navbar() {
         <Link href='/about' className='hover:underline'>
           About
         </Link>
-        <Link
-          href='/#contact'
-          className='p-2 px-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-all'
-        >
+        <Link href='/contact' className='hover:underline'>
           Contact
         </Link>
       </ul>
