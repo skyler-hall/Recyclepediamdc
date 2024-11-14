@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <head>
-      <title>Recyclepedia</title>
-        <meta name="description" content="Recyclepedia Miami-Dade County" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Recyclepedia</title>
+        <meta name='description' content='Recyclepedia Miami-Dade County' />
+        <link rel='icon' href='/favicon.ico' />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} mt-20 mx-2`}
