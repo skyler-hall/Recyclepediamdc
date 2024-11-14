@@ -3,10 +3,12 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { usePathname } from 'next/navigation';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navbarRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -64,25 +66,41 @@ function Navbar() {
       <ul className='hidden md:flex flex-row items-center gap-6'>
         <Link
           href='/curbside'
-          className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+          className={`text-lg transition-colors relative ${
+            pathname === '/curbside'
+              ? 'text-green-600 after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-green-600'
+              : 'text-gray-700 hover:text-green-600'
+          }`}
         >
           Curbside
         </Link>
         <Link
           href='/items'
-          className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+          className={`text-lg transition-colors relative ${
+            pathname === '/items'
+              ? 'text-green-600 after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-green-600'
+              : 'text-gray-700 hover:text-green-600'
+          }`}
         >
           Items
         </Link>
         <Link
           href='/learn'
-          className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+          className={`text-lg transition-colors relative ${
+            pathname === '/learn'
+              ? 'text-green-600 after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-green-600'
+              : 'text-gray-700 hover:text-green-600'
+          }`}
         >
           Learn
         </Link>
         <Link
           href='/about'
-          className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+          className={`text-lg transition-colors relative ${
+            pathname === '/about'
+              ? 'text-green-600 after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-green-600'
+              : 'text-gray-700 hover:text-green-600'
+          }`}
         >
           About
         </Link>
@@ -103,28 +121,44 @@ function Navbar() {
         <ul className='flex flex-col items-center gap-4'>
           <Link
             href='/curbside'
-            className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+            className={`text-lg transition-colors relative ${
+              pathname === '/curbside'
+                ? 'text-green-600'
+                : 'text-gray-700 hover:text-green-600'
+            }`}
             onClick={closeMenu}
           >
             Curbside
           </Link>
           <Link
             href='/items'
-            className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+            className={`text-lg transition-colors relative ${
+              pathname === '/items'
+                ? 'text-green-600'
+                : 'text-gray-700 hover:text-green-600'
+            }`}
             onClick={closeMenu}
           >
             Items
           </Link>
           <Link
             href='/learn'
-            className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+            className={`text-lg transition-colors relative ${
+              pathname === '/learn'
+                ? 'text-green-600'
+                : 'text-gray-700 hover:text-green-600'
+            }`}
             onClick={closeMenu}
           >
             Learn
           </Link>
           <Link
             href='/about'
-            className='text-lg text-gray-700 hover:text-green-600 transition-colors'
+            className={`text-lg transition-colors relative ${
+              pathname === '/about'
+                ? 'text-green-600'
+                : 'text-gray-700 hover:text-green-600'
+            }`}
             onClick={closeMenu}
           >
             About
