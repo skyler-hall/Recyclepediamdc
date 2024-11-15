@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 import './globals.css';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
 const geistSans = localFont({
@@ -7,6 +8,7 @@ const geistSans = localFont({
   variable: '--font-geist-sans',
   weight: '100 900',
 });
+
 const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
@@ -21,12 +23,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
+      <head>
+        <title>Recyclepedia</title>
+        <meta name='description' content='Recyclepedia Miami-Dade County' />
+        <link rel='icon' href='/favicon.ico' />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} mt-20 mx-2`}
       >
         <Navbar />
         {children}
-        {/* Footer goes here */}
+        <Footer />
       </body>
     </html>
   );
