@@ -39,7 +39,7 @@ function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className='fixed top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 flex flex-row justify-between items-center bg-white/90 backdrop-blur-sm h-16 rounded-xl pl-6 pr-4 md:pl-6 md:pr-6 shadow-lg border border-gray-200'
+      className='fixed z-50 top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 flex flex-row justify-between items-center bg-white/90 backdrop-blur-sm h-16 rounded-xl pl-6 pr-4 md:pl-6 md:pr-6 shadow-lg border border-gray-200'
     >
       <Link href='/' className='flex items-center space-x-2'>
         {/* Replace with new logo */}
