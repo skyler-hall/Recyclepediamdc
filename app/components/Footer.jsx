@@ -5,8 +5,8 @@ import Image from "next/image";
 
 function Footer () {
     return (
-      <footer className="bg-[#234E13] text-white py-2">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+      <footer className="w-full bg-[#234E13] text-black py-2">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Copyright Text */}
         <div className="text-center md:text-left mb-4 md:mb-0">
           <p>© 2024 Recyclepedia</p>
