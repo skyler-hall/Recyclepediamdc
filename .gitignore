@@ -10,6 +10,14 @@
 !.yarn/releases
 !.yarn/versions
 
+# Remove these Yarn-specific entries
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
 # testing
 /coverage
 

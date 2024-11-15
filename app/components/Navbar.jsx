@@ -41,7 +41,11 @@ function Navbar() {
       ref={navbarRef}
       className='fixed z-50 top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 flex flex-row justify-between items-center bg-white/90 backdrop-blur-sm h-16 rounded-xl pl-6 pr-4 md:pl-6 md:pr-6 shadow-lg border border-gray-200'
     >
-      <Link href='/' className='flex items-center space-x-2'>
+      <Link
+        href='/'
+        className='flex items-center space-x-2'
+        onClick={closeMenu}
+      >
         {/* Replace with new logo */}
         <h1 className='text-2xl font-bold bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent'>
           Recyclepedia
