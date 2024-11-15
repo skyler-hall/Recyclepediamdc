@@ -2,7 +2,7 @@
 
 import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
-import { cityData } from '../data/CityData';
+import { cityData } from '../../data/CityData';
 import CitySelector from '../components/CitySelector';
 import RecyclingList from '../components/RecyclingList';
 import Link from 'next/link'; // Import the Link component from Next.js

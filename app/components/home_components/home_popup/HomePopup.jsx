@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { homePopupData } from '@/app/data/popupData';
+import { homePopupData } from '@/data/popupData';
 
 function HomePopup() {
   const [isOpen, setIsOpen] = useState(false);
