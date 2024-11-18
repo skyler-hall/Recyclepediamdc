@@ -1,4 +1,3 @@
-// src/components/RecyclingList.js
 import RecyclingItemCard from "./RecyclingItemCard";
 
 const RecyclingList = ({ items }) => {
