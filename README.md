@@ -22,7 +22,8 @@ Recyclepedia MDC is a comprehensive platform promoting Miami-Dade's zero waste i
 ```bash
 cd <your projects directory>
 
-git clone https://github.com/skyler-hall/Recyclepediamdc.git recyclepedia  # creates a new folder containing the repo
+# creates a new folder containing the repo
+git clone https://github.com/skyler-hall/Recyclepediamdc.git recyclepedia
 
 cd recyclepedia
 ```
