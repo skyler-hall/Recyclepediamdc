@@ -15,6 +15,17 @@ Recyclepedia MDC is a platform promoting Miami-Dade's zero waste initiative. It 
 1. [Git](https://git-scm.com/downloads)
 2. [Node.js](https://nodejs.org/en)
 
+Calendar:
+3. Firebase
+4. React Full Calendar
+    -@fullcalendar/react
+    -@fullcalendar/core
+    -@fullcalendar/daygrid
+    -@fullcalendar/timegrid
+    -@fullcalendar/interaction
+5. React Tooltips
+    -react-tooltip
+
 ### Installation
 
 1. Clone repository to your local machine
