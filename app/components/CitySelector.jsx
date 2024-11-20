@@ -1,5 +1,5 @@
 const CitySelector = ({ onCityChange }) => {
-    const cities = ["Bal Harbour", "Bay Harbor Islands", "Biscayne Park", "Coral Gables", "Cutler Bay", "Doral", "El Portal", "Florida City", "Golden Beach", "Hialeah",
+    const cities = ["Aventura", "Bal Harbour", "Bay Harbor Islands", "Biscayne Park", "Coral Gables", "Cutler Bay", "Doral", "El Portal", "Florida City", "Golden Beach", "Hialeah",
     "Hialeah Gardens", "Homestead", "Indian Creek", "Key Biscayne", "Medley", "Miami", "Miami Beach", "Miami Gardens", "Miami Lakes", "Miami Shores", "Miami Springs",
     "North Bay Village", "North Miami", "North Miami Beach", "Opa-Locka", "Palmetto Bay", "Pinecrest", "South Miami", "Sunny Isles Beach", "Surfside", "Sweetwater",
     "Virginia Gardens", "West Miami", "Unincorporated Dade"];
