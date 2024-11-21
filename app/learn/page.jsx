@@ -74,11 +74,11 @@ function Learn() {
 
        {/* Recycling Dropdown Section */}
        <div className="recycling-dropdown p-4 bg-[#a9def9] text-white">
-        <h2 className="text-3xl font-bold text-center mb-4">Recycling Tips</h2>
+        <h2 className="text-4xl font-bold text-center mb-4">Recycling Tips</h2>
         <div className="flex justify-center items-center">
           <select
             onChange={(e) => handleItemClick(e.target.value)}
-            className="p-2 border border-gray-300 rounded-md text-black"
+            className="p-2 border border-gray-300 rounded-md text-black  text-2xl"
           >
             <option value="">Select an item to learn how to recycle</option>
             {Object.keys(recyclingTips).map((item) => (
@@ -90,8 +90,8 @@ function Learn() {
         </div>
         {showDetails && selectedItem && (
           <div className="mt-4 text-center">
-            <h3 className="font-bold text-xl">How to Recycle {selectedItem.charAt(0).toUpperCase() + selectedItem.slice(1)}</h3>
-            <p className="mt-2">{recyclingTips[selectedItem]}</p>
+            <h3 className="font-bold text-4xl text-black">How to Recycle {selectedItem.charAt(0).toUpperCase() + selectedItem.slice(1)}</h3>
+            <p className="mt-2 text-3xl text-black">{recyclingTips[selectedItem]}</p>
           </div>
         )}
       </div>
