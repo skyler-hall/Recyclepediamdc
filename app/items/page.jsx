@@ -38,27 +38,27 @@ function Items() {
   const [distanceFilter, setDistanceFilter] = useState(0); // State for distance filter
 
   // Fetch locations from Firestore
-  useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        const querySnapshot = await getDocs(
-          collection(db, 'recycle_locations')
-        );
-        const locationsData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setLocations(locationsData);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching locations: ', err);
-        setError('Failed to load locations. Please try again later.');
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchLocations = async () => {
+  //     try {
+  //       const querySnapshot = await getDocs(
+  //         collection(db, 'recycle_locations')
+  //       );
+  //       const locationsData = querySnapshot.docs.map((doc) => ({
+  //         id: doc.id,
+  //         ...doc.data(),
+  //       }));
+  //       setLocations(locationsData);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       console.error('Error fetching locations: ', err);
+  //       setError('Failed to load locations. Please try again later.');
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchLocations();
-  }, []);
+  //   fetchLocations();
+  // }, []);
 
   // Get user's current location
   useEffect(() => {

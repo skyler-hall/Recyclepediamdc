@@ -1,30 +1,59 @@
-"use client"; // Mark this as a client component
+"use client"; // Mark as a client component
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setResponseMessage(""); // Reset message
+
+    try {
+      const response = await fetch(
+        "https://console.firebase.google.com/project/diginfo/overview", // Replace with your deployed function URL
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        setResponseMessage("Your message has been sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Reset form
+      } else {
+        setResponseMessage("Failed to send your message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setResponseMessage("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-3xl font-bold mb-8">Feedback Form</h1>
-      <h3>We want to hear from you!</h3>
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
+      <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md"
+      >
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Name</label>
           <input
@@ -37,7 +66,7 @@ function Contact() {
             required
           />
         </div>
-        
+
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
           <input
@@ -65,13 +94,23 @@ function Contact() {
         </div>
 
         <button
-            type="submit"
-            className="w-full py-2 font-bold rounded-lg hover:bg-blue-600 transition duration-300"
-            style={{ backgroundColor: '#a9def9', color: 'black' }}
-            >
-            Send Message
+          type="submit"
+          className="w-full py-2 font-bold rounded-lg hover:bg-blue-600 transition duration-300"
+          style={{ backgroundColor: "#a9def9", color: "black" }}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
+
+      {responseMessage && (
+        <div className="mt-4 p-4 w-full max-w-lg text-center rounded-lg" style={{
+          backgroundColor: responseMessage.includes("successfully") ? "#d4edda" : "#f8d7da",
+          color: responseMessage.includes("successfully") ? "#155724" : "#721c24",
+        }}>
+          {responseMessage}
+        </div>
+      )}
     </div>
   );
 }
