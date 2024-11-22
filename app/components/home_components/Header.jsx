@@ -65,12 +65,6 @@ const Header = () => {
 
     return (
         <div className="lg:flex justify-between items-center mx-auto mb-24">
-            {/* <div className="bg-[#234E13] rounded-b-[350px] absolute right-[0px] -z-10 h-full w-full">
-                For background: maybe use one of those minimalistic images i downloaded and edit
-                in pixlr or canva to hue shift them from blue -> green, increase saturation to
-                make for a brighter, happier pic, maybe change the sky to a distinct blue
-                and implement that!
-            </div> */}
             <div className="text-center lg:text-left lg:w-3/5 md:ml-4 mt-4">
                 <h1 className="text-4xl mb-4 sm:text-6xl xl:text-7xl font-bold text-[#234E13] drop-shadow-md">Waste Made Simple</h1>
                 <h3 className="text-2xl mb-4 sm:text-3xl xl:text-4xl font-medium">Empowering Miami's Youth in Climate Action</h3>

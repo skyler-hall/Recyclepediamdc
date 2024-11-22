@@ -1,6 +1,19 @@
+"use client"
+
 import  CalendarView from './CalendarView'
+import { SlArrowDown } from "react-icons/sl";
+import { useState } from 'react';
 
 const CommunitySection = () => {
+
+    const [isHidden, setIsHidden] = useState(false)
+
+    
+    const handleHide = () => {
+        console.log('Hidden')
+        setIsHidden(!isHidden)
+    }
+
     return (
         <div className="mt-24 mb-6">
             <div className="mb-14 flex items-center justify-center">
@@ -19,10 +32,10 @@ const CommunitySection = () => {
                     {/* <p className='text-center'>No events at the moment!</p> */}
                 </div>
             </div>
-
-            {/* <div className='absolute w-screen -z-10 left-[calc(0%)] bottom-0 max-w-fit'>
-                <img src='mountains_bkg.jpg' className='-z-9999'></img>
-            </div> */}
+            <SlArrowDown onClick={handleHide} className='mt-10 mb-2'/>
+            <div className={`w-full transition-all ease-in-out duration-300 ${isHidden ? ' h-0 border-none' : 'h-[200px] border-2 border-gray-600 bg-white'}`}>
+                <h1 className={`text-2xl text-center transition-all ease-in-out duration-300 ${isHidden ? 'opacity-0' : ''}`}>Ad Space</h1>
+            </div>
         </div>
     )
 }
