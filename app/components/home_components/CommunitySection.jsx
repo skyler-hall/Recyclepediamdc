@@ -22,7 +22,7 @@ const CommunitySection = () => {
                 <hr className=" border-4 border-[#DBF4D2] w-1/3 h-full" />
             </div>
             <div className="md:flex justify-center items-center">
-                <div className="md:w-1/2 p-8 lg:border-r-8 border-solid border-[#a9def9] bg-white">
+                <div className="md:w-1/2 p-4 sm:p-8 lg:border-r-8 border-solid border-[#a9def9] bg-white">
                     <h3 className="text-5xl font-bold text-center md:text-5xl md:text-left mb-8 md:mb-4">Community Calendar</h3>
                     <p className="text-center md:text-left">
                         Get involved with your community and make a difference by exploring local events, activities, and more!</p>
