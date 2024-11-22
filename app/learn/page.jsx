@@ -211,7 +211,7 @@ function Learn() {
 
             <div className='max-w-full w-full  rounded overflow-hidden shadow-lg'>
               <a
-                href='https://www.handsonmiami.org/about-membership?layoutViewMode=tablet'
+                href='https://www.miamidade.gov/global/solidwaste/home-composting.page'
                 className=''
               >
                 <img
