@@ -78,7 +78,7 @@ const Header = () => {
 
                     Through engaging content and interactive lessons, Recyclepedia likely aims
                     to inspire younger generations to understand recycling, waste management, and environmental stewardship, making
-                    climate-friendly practices <span className="text-[#234E13] font-bold"> accessible and interesting for students </span>.
+                    climate-friendly practices <span className="text-[#234E13] font-bold"> accessible and interesting for students. </span>
                 </p>
                 <div className="lg:hidden lg:w-2/5 p-2 mb-8"> {/*Image display for smaller screens, tablets*/}
                     <img src='home_img.png' alt='Recycling sign with recyclables in the background'/>
