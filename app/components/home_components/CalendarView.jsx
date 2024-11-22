@@ -12,33 +12,6 @@ import db from '../../../data/firebase'
 import { onSnapshot, collection } from 'firebase/firestore';
 
 const CalendarView = () => {
-    /* 
-        Drafting:
-
-        Looks like they're using excel spreadsheets to load data
-        So:
-        Format an excel spreadsheet with columns:
-            Event name
-            Date (with or without time)
-            Description
-            Max Capacity (can be null)
-            Link (to some site if applicable, can be null)
-
-        And connect that excel spreadsheet to the DIG firestore database
-            Can upload on every change of the spreadsheet
-        Once data is uploaded,
-            Database should pull it and create an event card component
-            that displays on the calendar on site
-
-            If a date has an event, it should have some color or display some dot to indicate that.
-                If you click a date, it should display the event card. If you click outside the area, disappear the card.
-
-                Event format:
-                title
-                date
-                backgroundcolor
-
-    */
 
     const [events, setEvents] = useState([])
     useEffect(() => onSnapshot(collection(db, "Events"), (snapshot) => {
