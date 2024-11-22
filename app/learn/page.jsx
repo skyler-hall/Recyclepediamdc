@@ -337,62 +337,7 @@ function Learn() {
   </div>
 </div>
 
-      {/* section 3 */}
-      {/* <div className='grid grid-cols-2 w-[80%]'>
-        <div className='relative mt-10 '>
-          <h1 className='text-4xl font-bold text-center w-[100%] p-4 bg-[#a9def9] text-white'>
-            Watch and Learn
-          </h1>
-
-          <div className='video-grid flex flex-col gap-6 justify-center mt-6 w-100%] px-4'>
-            <div className='video flex justify-content-center w-full rounded-lg overflow-hidden shadow-lg'>
-              <iframe
-                width='100%'
-                height='315'
-                src='https://www.youtube.com/embed/Fex-wvrOZf4?si=nfK5j6JH8LKNTeic'
-                title='YouTube video player'
-                frameBorder={0}
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                referrerPolicy='strict-origin-when-cross-origin'
-                allowFullScreen
-              ></iframe>
-            </div>
-
-            <div className='video flex justify-center w-full rounded-lg overflow-hidden shadow-lg'>
-              <iframe
-                width='100%'
-                height='315'
-                src='https://www.youtube.com/embed/cNPEH0GOhRw?si=5REcFjBYd5PPpjms'
-                title='YouTube video player'
-                frameBorder={0}
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                referrerPolicy='strict-origin-when-cross-origin'
-                allowFullScreen
-              ></iframe>{' '}
-            </div>
-          </div>
-        </div>
-
-  <div className="relative mt-10 flex flex-col items-center ">
-    <h1 className="text-4xl font-bold text-center w-[100%] p-4 bg-[#a9def9] text-white">
-      Join the Green Schools Challenge
-    </h1>
-    <div className="flex items-center gap-4 mt-4">
-      <img
-        src="/img/green.png"
-        alt="Green Schools Challenge"
-        className="w-1/2 h-auto rounded-lg shadow-lg"
-      />
-      <p className="text-gray-700 text-base">
-        The Green Schools Challenge inspires students and educators to create a
-        more sustainable future. Participate in activities that promote
-        recycling, energy conservation, and community awareness. Join now and
-        help make a difference for generations to come!
-      </p> 
-    </div>
-  </div> */}
-
-      {/* </div> */}
+      
       {/* <Footer/> */}
     </div>
   );
