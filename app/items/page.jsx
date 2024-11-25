@@ -19,6 +19,12 @@ const haversine = (lat1, lon1, lat2, lon2) => {
       Math.cos(toRad(lat2)) *
       Math.sin(deltaLon / 2) *
       Math.sin(deltaLon / 2);
+  const a =
+    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(deltaLon / 2) *
+      Math.sin(deltaLon / 2);
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
@@ -138,6 +144,10 @@ function Items() {
   };
 
   return (
+    <div className='flex flex-col items-center mt-32 min-h-[calc(100vh-10rem)]'>
+      <h1 className='text-3xl mb-4 font-bold'>
+        Find the nearest location to recycle your item
+      </h1>
     <div className='flex flex-col items-center mt-32 min-h-[calc(100vh-10rem)]'>
       <h1 className='text-3xl mb-4 font-bold'>
         Find the nearest location to recycle your item
