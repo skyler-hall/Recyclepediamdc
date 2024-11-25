@@ -217,5 +217,6 @@ export const availableItems = [
     'Wood Furniture',
     'Yogurt Cups',
     'Zip Lock Bags'
+    
   ];
   
