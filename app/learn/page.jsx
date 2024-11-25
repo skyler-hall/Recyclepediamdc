@@ -3,18 +3,22 @@ import '../globals.css';
 import Navbar from '../components/Navbar';
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
+// import { onSnapshot, collection } from "firebase/firestore";
+import { collection, getDocs } from 'firebase/firestore';
+
+
 
 function Learn() {
   const games = [
     {
       title: 'The United Nations Activities',
-      imageSrc: '/img/un-logo.png',
+      imageSrc: '/img/un-ep.png',
       link: '',
     },
-    { title: 'Climate Kids Game', imageSrc: '/img/ckids-logo.png', link: '' },
+    { title: 'Climate Kids Game', imageSrc: '/img/climate-kids.png', link: '' },
     {
       title: 'Environmental Protection Agency Games',
-      imageSrc: '/img/EPA-logo.png',
+      imageSrc: '/img/epa.png',
       link: 'https://www.epa.gov/students/games-quizzes-and-videos-about-environment',
     },
   ];
@@ -73,14 +77,18 @@ function Learn() {
       <Navbar />
 
        {/* Recycling Dropdown Section */}
-       <div className="recycling-dropdown p-4 bg-[#a9def9] text-white">
-        <h2 className="text-4xl font-bold text-center mb-4">Recycling Tips</h2>
-        <div className="flex justify-center items-center">
+       <div className="recycling-dropdown p-4 bg-[#a9def9] text-black ">
+       <h1 className='text-5xl font-bold text-center w-full p-4 bg-[#a9def9] text-black '>
+          Learn 
+        </h1>
+        <hr class="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
+        <h2 className="text-5xl font-bold text-center mb-4 mt-4">Recycling Tips</h2>
+        <div className="flex flex-col items-center">
           <select
             onChange={(e) => handleItemClick(e.target.value)}
-            className="p-2 border border-gray-300 rounded-md text-black  text-2xl"
+            className="p-2 border border-gray-300 rounded-md text-black  w-full md:w-auto text-lg md:text-3xl"
           >
-            <option value="">Select an item to learn how to recycle</option>
+            <option value="" >Select an item to learn how to recycle</option>
             {Object.keys(recyclingTips).map((item) => (
               <option key={item} value={item}>
                 {item.charAt(0).toUpperCase() + item.slice(1).replace(/([A-Z])/g, ' $1')}
@@ -89,103 +97,98 @@ function Learn() {
           </select>
         </div>
         {showDetails && selectedItem && (
-          <div className="mt-4 text-center">
-            <h3 className="font-bold text-4xl text-black">How to Recycle {selectedItem.charAt(0).toUpperCase() + selectedItem.slice(1)}</h3>
-            <p className="mt-2 text-3xl text-black">{recyclingTips[selectedItem]}</p>
-          </div>
+         <div className="mt-4 text-center">
+         <h3 className="font-bold text-2xl md:text-4xl text-black">
+           How to Recycle {selectedItem.charAt(0).toUpperCase() + selectedItem.slice(1)}
+         </h3>
+         <p className="mt-2 text-lg md:text-4xl text-black">{recyclingTips[selectedItem]}</p>
+       </div>
         )}
       </div>
       {/* FIrst Section  */}
       <div className='relative mt-5'>
-        <h1 className='text-4xl font-bold text-center w-full p-4 bg-[#a9def9] text-white'>
-          Learn Page
-        </h1>
-        <div className='grid grid-cols-1 md:grid-cols-2 justify-center items-center mt-5'>
+        {/* <h1 className='text-5xl font-bold text-center w-full p-4 bg-[#a9def9] text-black'>
+          Learn 
+        </h1> */}
+        <div className='grid grid-cols-1 md:grid-cols-2  gap-6 justify-center items-center mt-5'>
           {/* left  */}
           <div className='learn-note text-center sm:text-left p-4 '>
-            <p className=''>
-              Recycling is an essential practice that helps reduce waste,
-              conserve natural resources, and minimize the environmental impact
-              of human activity. By turning materials like plastic, paper,
-              glass, and metals into new products, recycling prevents these
-              items from ending up in landfills, where they can take decades or,
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores obcaecati amet, dolore similique ratione nihil eaque
-              velit modi sapiente corrupti pariatur, libero fugit iure, natus
-              nulla repellat aut facilis nostrum?
+            <p className="text-lg md:text-4xl font-medium leading-relaxed p-5">
+            Recycling is an essential practice that helps reduce waste, conserve natural resources, 
+            and minimize the environmental impact of human activity. By turning materials like plastic,
+             paper, glass, and metals into new products, recycling prevents these items from ending up in 
+             landfills, where they can take decades to decompose. <br/> <br/>Recycling also helps reduce greenhouse gases like
+              carbon dioxide, methane, nitrous oxide and more. In addition to this, it helps reduce pollution of 
+              our environment, water, and air. Ultimately, recycling is an initiative that helps reduce global climate impacts by cutting down
+               greenhouse gas emissions. It benefits our communities, businesses, and the environment by reducing pollution, 
+               lowering the demand for raw materials, and creating new job opportunities in recycling industries. 
             </p>
           </div>
 
           {/* right-games */}
           <div
-            className='games-carousel relative overflow-hidden w-full flex justify-center items-center gap-4'
+            className="games-carousel relative rounded-lg overflow-hidden shadow-lg max-w-full mx-auto md:w-[35%] sm:w-[50%]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            style={{ height: '300px' }}
+            style={{
+              margin: '0 auto',
+            }}
           >
             <div
-              className='flex transition-transform duration-700 ease-in-out'
+             className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {games.map((game, index) => (
                 <div
                   key={index}
-                  className='card text-center p-4 min-w-full'
+                  className="card text-center p-4 min-w-full"
                   style={{
                     border: '2px solid grey',
                     borderRadius: '10px',
-                    padding: 'auto 20px',
-                    // width: '200px',
-                    // minWidth: '200px',
                   }}
                 >
-                  <a
+                 <a
                     key={index}
                     href={game.link}
-                    className='card text-center p-4 min-w-full'
+                    className="block text-center p-4"
                     style={{
-                      // border: '2px solid grey',
-                      borderRadius: '10px',
-                      padding: 'auto 20px',
                       textDecoration: 'none',
                     }}
                   >
                     <img
                       src={game.imageSrc}
-                      alt={game.title}
-                      className='w-full h-48  object-center'
+                     alt={game.title}
+                      className="w-full h-auto object-center"
                     />
-                    <div className='card-body'>
-                      <p>{game.title}</p>
+                    <div className="card-body">
+                      <p className="text-3xl p-2">{game.title}</p>
                       <hr />
-                      {/* <button type="button" className="text-white bg-green-500 hover:bg-green-700 mt-2 font-medium rounded-lg text-sm px-5 py-2.5">
-                    Play Games!
-                  </button> */}
-                    </div>
+                   </div>
                   </a>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
 
         {/* Second section */}
-        <div className='relative mt-10'>
-          <h1 className='text-4xl font-bold text-center w-full p-4 bg-[#a9def9] text-white'>
+        <div className='relative mt-10 text-4xl '>
+          <h1 className='text-5xl font-bold text-center w-full p-4 bg-[#a9def9] text-black'>
             Get Involved
           </h1>
-          <div className='grid md:grid-rows-1  sm:grid-cols-1 md:grid-cols-3 gap-6 mt-6 w-screen p-5'>
+          <div className='grid md:grid-rows-1  sm:grid-cols-1 md:grid-cols-3 gap-[5%] mt-6 w-screen pl-[10%] pr-[10%] m-5'>
             <div className='max-w-full w-full rounded overflow-hidden shadow-lg'>
               <a href='https://volunteercleanup.org/' className=''>
                 <img
-                  className='w-full h-48 object-cover'
+                  className='w-full h-[50%] object-center'
                   src='/img/involved1.png'
                   alt='Sunset in the mountains'
                 />
               </a>
-              <div className='px-6 py-4'>
-                <div className='font-bold text-xl mb-2'>Volunteer Clean Up</div>
-                <p className='text-gray-700 text-base'>
+              <div className='px-6 py-4 overflow-hidden'>
+                <div className='font-bold text-4xl mb-2'>Volunteer Clean Up</div>
+                <p className='text-gray-700 text-3xl'>
                   VolunteerCleanup.Org engages volunteers to cleanup their
                   neighborhoods, shorelines, and waterways as a way to raise
                   awareness about marine debris and encourage people to reduce
@@ -203,22 +206,22 @@ function Learn() {
 
             <div className='max-w-full w-full  rounded overflow-hidden shadow-lg'>
               <a
-                href='https://www.handsonmiami.org/about-membership?layoutViewMode=tablet'
+                href='https://www.miamidade.gov/global/solidwaste/home-composting.page'
                 className=''
               >
                 <img
-                  className='w-full h-48 object-cover'
+                  className='w-full h-[50%] object-center'
                   src='/img/composting.webp'
                   alt='Sunset in the mountains'
                 />
               </a>
               <div className='px-6 py-4'>
-                <div className='font-bold text-xl mb-2'>Composting</div>
-                <p className='text-gray-700 text-base'>
+                <div className='font-bold text-4xl mb-2 '>Composting</div>
+                <p className='text-gray  text-3xl'>
                   Composting is the process of turning organic waste into
                   nutrient-rich soil through natural decomposition. It's an
                   eco-friendly way to reduce waste and enrich soil.
-                  <br /> Get started with the resource below!{' '}
+                  <br /> Get started with the resource below!{' '} <br/>
                 </p>
                 <a
                   target='_blank'
@@ -227,7 +230,8 @@ function Learn() {
                 >
                   Home Composting
                 </a>{' '}
-                <br></br>
+                <br/>
+                <br/>
                 <a
                   target='_blank'
                   href='https://sfyl.ifas.ufl.edu/sarasota/natural-resources/waste-reduction/composting/'
@@ -251,14 +255,14 @@ function Learn() {
                 className=''
               >
                 <img
-                  className='w-full h-48  object-center'
+                  className='w-full h-[50%]  object-center'
                   src='/img/handson.jpeg'
                   alt='Sunset in the mountains'
                 />
               </a>
-              <div className='px-6 py-4'>
-                <div className='font-bold text-xl mb-2'>Hands On Miami</div>
-                <p className='text-gray-700 text-base'>
+              <div className='px-6 py-4 '>
+                <div className='font-bold text-4xl mb-2'>Hands On Miami</div>
+                <p className='text-gray-700 text-3xl'>
                   Become a volunteer & make difference in the community!
                 </p>
               </div>
@@ -273,18 +277,19 @@ function Learn() {
       </div>
 
 
-                    {/* test section */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full px-4 mt-10">
+        {/* test section */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-[2%] w-full px-4 mt-10 pb-[5%]">
   {/* Watch and Learn Section */}
   <div className="flex flex-col justify-start">
-    <h1 className="text-4xl font-bold text-center w-full p-4 bg-[#a9def9] text-white">
+    <h1 className="text-5xl font-bold text-center w-full p-4 bg-[#a9def9] text-black">
       Watch and Learn
     </h1>
-    <div className="flex flex-col gap-6 justify-center mt-6 w-full">
+    <div className="flex flex-col gap-6 justify-center mt-6 w-full pl-[10%] pr-[10%]">
+      <h1 className="font-bold text-4xl">Recycling for Kids | Learn how to Reduce, Reuse, and Recycle</h1>
       <div className="rounded-lg overflow-hidden shadow-lg">
         <iframe
           width="100%"
-          height="315"
+          height="450"
           src="https://www.youtube.com/embed/Fex-wvrOZf4?si=nfK5j6JH8LKNTeic"
           title="YouTube video player"
           frameBorder={0}
@@ -293,10 +298,13 @@ function Learn() {
           allowFullScreen
         ></iframe>
       </div>
+      <h1 className="font-bold text-4xl">Entire Recycling Process Explained
+</h1>
+
       <div className="rounded-lg overflow-hidden shadow-lg">
         <iframe
           width="100%"
-          height="315"
+          height="450"
           src="https://www.youtube.com/embed/cNPEH0GOhRw?si=5REcFjBYd5PPpjms"
           title="YouTube video player"
           frameBorder={0}
@@ -308,33 +316,40 @@ function Learn() {
     </div>
   </div>
 
+  {/* <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 w-full px-4 mt-10 pb-[10%]"> */}
   {/* Join the Green Schools Challenge Section */}
-  <div className="flex flex-col justify-between items-center">
-    <h1 className="text-4xl font-bold text-center w-full p-4 bg-[#a9def9] text-white">
+  <div className="flex flex-col justify-between items-center pb-[10%]">
+    <h1 className="text-5xl font-bold text-center w-full p-4 bg-[#a9def9] text-black">
       Join the Green Schools Challenge
     </h1>
-    <div className="flex flex-row items-stretch h-[100%] gap-4 mt-6">
+    <div className="flex flex-1 flex-col justify-center">
+      {/* Text */}
+      <div className="flex-1 flex flex-col justify-center">
+        <p className="text-3xl text-gray-700 p-4 m-1">
+          K-12 students and teachers looking to learn more about waste
+          reduction, energy efficiency, water conservation, and more, join the
+          Green Schools Challenge to have access to full lesson plans to
+          promote environmental stewardship.
+          <br />
+          This is an initiative to inspire students and teachers to adopt
+          sustainable practices within their schools.
+          <br />
+          By participating, schools can make a lasting impact on their
+          communities and the planet. Join us today and be part of the change!
+        </p>
+      </div>
       {/* Image */}
-      <div className="flex flex-1">
+      <div className=" flex flex-1">
         <img
-          className="w-full h-full object-cove rounded-lg shadow-lg"
+          className="w-full h-auto object-cover rounded-lg shadow-lg"
           src="/img/green.png"
           alt="Green Schools Challenge"
         />
       </div>
-      {/* Text */}
-      <div className="flex flex-1 flex-col justify-center">
-        <p className="text-3xl text-gray-700 p-4 m-1">
-         K-12 students and teachers looking to learn more about waste reduction, energy efficiency, water conservation and more, 
-         join the Green Schools Challenge to have access to full lesson plans to promote environmental stewardship.
-          <br/>This is an initiative to inspire students and
-          teachers to adopt sustainable practices within their schools.<br/>By
-          participating, schools can make a lasting impact on their communities
-          and the planet. Join us today and be part of the change!
-        </p>
-      </div>
     </div>
   </div>
+{/* </div> */}
+
 </div>
 
       
