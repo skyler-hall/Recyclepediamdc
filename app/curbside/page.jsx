@@ -1,31 +1,28 @@
 'use client';
 
-import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
 import { cityData } from '../../data/CityData';
 import CitySelector from '../components/CitySelector';
 import RecyclingList from '../components/RecyclingList';
-import Link from 'next/link'; // Import the Link component from Next.js
-import Image from 'next/image'; // Import the Image component from Next.js
+import Link from 'next/link'; 
+import Image from 'next/image'; 
 
 function Curbside() {
   const [city, setCity] = useState('');
   const [recyclingItems, setRecyclingItems] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
+  const [searchQuery, setSearchQuery] = useState(''); 
 
   const handleCityChange = (city) => {
     setCity(city);
     setRecyclingItems(cityData[city] || []);
   };
 
-  // Handle search input change
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  // Filter items based on the search query
   const filteredItems = recyclingItems.filter(
-    (item) => item.name.toLowerCase().includes(searchQuery.toLowerCase()) // Case-insensitive search
+    (item) => item.name.toLowerCase().includes(searchQuery.toLowerCase()) 
   );
 
   return (
@@ -34,7 +31,6 @@ function Curbside() {
         Curbside Pickup Items in {city || 'Your City'}
       </h1>
 
-      {/* Flex container for the city selector */}
       <div className='flex items-center mb-4 space-x-2'>
         <span className='mr-2 text-lg font-semibold text-black'>
           You are in
@@ -42,10 +38,8 @@ function Curbside() {
         <CitySelector onCityChange={handleCityChange} />
       </div>
 
-      {/* Box for search bar and item cards with black border */}
       {city && (
         <div className='w-full max-w-3xl bg-white border-2 border-black rounded-lg shadow-lg p-6 mt-4'>
-          {/* Search Bar */}
           <div className='mb-6 flex justify-center'>
             <div className='relative w-full max-w-md'>
               <input
@@ -55,7 +49,6 @@ function Curbside() {
                 placeholder='Search for recycling items...'
                 className='w-full px-4 py-2 pr-12 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500'
               />
-              {/* Magnifying Glass Icon */}
               <Image
                 src='/magnifyingGlass.png'
                 alt='Magnifying Glass'
@@ -66,12 +59,11 @@ function Curbside() {
             </div>
           </div>
 
-          {/* Items */}
-          <RecyclingList items={filteredItems} />
+          {/* Pass city to RecyclingList */}
+          <RecyclingList items={filteredItems} city={city} cityData={cityData} />
         </div>
       )}
 
-      {/* "Item not listed?" text and button */}
       <div className='mt-6 text-center'>
         <p className='text-lg font-medium text-gray-700 mb-4'>
           Item not listed?
