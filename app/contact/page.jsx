@@ -1,6 +1,7 @@
 "use client"; // Mark as a client component
 
 import React, { useState } from "react";
+import emailjs from "emailjs-com"; // Import the EmailJS library
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -19,29 +20,27 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setResponseMessage(""); // Reset message
+    setResponseMessage(""); // Reset response message
 
     try {
-      const response = await fetch(
-        "https://console.firebase.google.com/project/diginfo/overview", // Replace with your deployed function URL
+      // Use EmailJS to send the email
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, // Service ID from .env.local
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, // Template ID from .env.local
         {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
+          name: formData.name,
+          reply_to: formData.email, // User's email
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY // Public Key from .env.local
       );
 
-      if (response.ok) {
-        setResponseMessage("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Reset form
-      } else {
-        setResponseMessage("Failed to send your message. Please try again.");
-      }
+      console.log("Email sent successfully:", result.text);
+      setResponseMessage("Your message has been sent successfully!");
+      setFormData({ name: "", email: "", message: "" }); // Reset form fields
     } catch (error) {
-      console.error("Error submitting form:", error);
-      setResponseMessage("An error occurred. Please try again later.");
+      console.error("Failed to send email:", error.text);
+      setResponseMessage("Failed to send your message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -55,7 +54,9 @@ function Contact() {
         className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md"
       >
         <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Name</label>
+          <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+            Name
+          </label>
           <input
             type="text"
             id="name"
@@ -68,7 +69,9 @@ function Contact() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
+          <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+            Email
+          </label>
           <input
             type="email"
             id="email"
@@ -81,7 +84,9 @@ function Contact() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">Message</label>
+          <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
+            Message
+          </label>
           <textarea
             id="message"
             name="message"
@@ -104,10 +109,13 @@ function Contact() {
       </form>
 
       {responseMessage && (
-        <div className="mt-4 p-4 w-full max-w-lg text-center rounded-lg" style={{
-          backgroundColor: responseMessage.includes("successfully") ? "#d4edda" : "#f8d7da",
-          color: responseMessage.includes("successfully") ? "#155724" : "#721c24",
-        }}>
+        <div
+          className="mt-4 p-4 w-full max-w-lg text-center rounded-lg"
+          style={{
+            backgroundColor: responseMessage.includes("successfully") ? "#d4edda" : "#f8d7da",
+            color: responseMessage.includes("successfully") ? "#155724" : "#721c24",
+          }}
+        >
           {responseMessage}
         </div>
       )}
