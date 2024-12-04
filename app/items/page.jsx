@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { db } from '../lib/firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-import { availableItems } from '@/data/availableItems'; // Import available items
+import { availableItems } from '@/data/availableItems';
+import Image from 'next/image';
 
 // Haversine formula to calculate distance
 const haversine = (lat1, lon1, lat2, lon2) => {
@@ -136,100 +137,126 @@ function Items() {
   };
 
   return (
-    <div className='flex flex-col items-center mt-32 min-h-[calc(100vh-10rem)]'>
-      <h1 className='text-3xl mb-4 font-bold'>
-        Find the nearest location to recycle your item
-      </h1>
+    <div className='min-h-screen bg-gradient-to-b from-white to-[#DBF4D2]/20'>
+      <div className='max-w-6xl mx-auto px-4 py-12'>
+        <div className='text-center mb-12'>
+          <h1 className='text-4xl md:text-5xl font-bold text-[#234E13] mb-4'>
+            Find Recycling Locations
+          </h1>
+          <p className='text-gray-600 text-lg md:text-xl'>
+            Discover where to recycle specific items in your area
+          </p>
+        </div>
 
-      {loading && <p>Loading locations...</p>}
-      {error && <p className='text-red-500'>{error}</p>}
+        <div className='max-w-xl mx-auto mb-8'>
+          <div className='flex flex-col gap-4 p-6 bg-white rounded-2xl shadow-lg'>
+            <div className='relative'>
+              <input
+                type='text'
+                value={searchQuery}
+                onChange={handleSearchQueryChange}
+                placeholder='Enter an item name (e.g., Magazines)'
+                className='w-full px-6 py-3 pr-12 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#234E13] focus:border-transparent transition-all duration-200'
+              />
+              <div className='absolute right-4 top-1/2 -translate-y-1/2'>
+                <Image
+                  src='/magnifyingGlass.png'
+                  alt='Search'
+                  width={20}
+                  height={20}
+                  className='text-gray-400'
+                />
+              </div>
+            </div>
 
-      <div className='flex justify-center w-full mb-4 relative'>
-        <input
-          type='text'
-          value={searchQuery}
-          onChange={handleSearchQueryChange}
-          placeholder='Enter an item name (e.g., Magazines)'
-          className='p-2 border rounded w-1/2'
-        />
-        {filteredItems.length > 0 && (
-          <div className='absolute top-full left-0 w-full border bg-white shadow-lg'>
-            <ul>
-              {filteredItems.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleItemSelect(item)}
-                  className='p-2 hover:bg-gray-200 cursor-pointer'
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            {filteredItems.length > 0 && (
+              <div className='bg-white rounded-xl border border-gray-200 shadow-lg'>
+                <ul>
+                  {filteredItems.map((item, index) => (
+                    <li
+                      key={index}
+                      onClick={() => handleItemSelect(item)}
+                      className='p-3 hover:bg-gray-50 cursor-pointer border-b last:border-b-0 transition-colors'
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <button
+              onClick={handleSearch}
+              className='px-8 py-3 bg-[#234E13] text-white rounded-xl hover:bg-[#1a3b0e] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg'
+            >
+              Search Locations
+            </button>
+
+            <div className='flex items-center gap-2'>
+              <label htmlFor='distanceFilter' className='text-gray-700'>
+                Filter by distance:
+              </label>
+              <select
+                id='distanceFilter'
+                value={distanceFilter}
+                onChange={(e) => setDistanceFilter(Number(e.target.value))}
+                className='px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#234E13] focus:border-transparent'
+              >
+                <option value={0}>All</option>
+                <option value={5}>5 miles</option>
+                <option value={10}>10 miles</option>
+                <option value={15}>15 miles</option>
+              </select>
+            </div>
           </div>
+        </div>
+
+        {loading && (
+          <div className='text-center text-gray-600'>Loading locations...</div>
         )}
-      </div>
+        {error && <div className='text-center text-red-500'>{error}</div>}
 
-      <button
-        onClick={handleSearch}
-        className='p-2 mb-4 bg-blue-500 text-white rounded'
-      >
-        Search
-      </button>
-
-      <div className='mb-4'>
-        <label htmlFor='distanceFilter' className='mr-2'>
-          Filter by distance:
-        </label>
-        <select
-          id='distanceFilter'
-          value={distanceFilter}
-          onChange={(e) => setDistanceFilter(Number(e.target.value))}
-          className='p-2 border rounded'
-        >
-          <option value={0}>All</option>
-          <option value={5}>5 miles</option>
-          <option value={10}>10 miles</option>
-          <option value={15}>15 miles</option>
-        </select>
-      </div>
-
-      <div className='mt-4 w-full'>
-        {isSearchClicked ? (
-          matchingLocations.length > 0 ? (
-            matchingLocations
-              .sort((a, b) => a.distance - b.distance) // Sort by distance
-              .map((location) => (
-                <div
-                  key={location.id}
-                  className='p-4 mb-2 border rounded bg-gray-100 shadow-sm'
-                >
-                  <p>
-                    <strong>Item:</strong> {location.item}
-                  </p>
-                  <p>
-                    <strong>Location:</strong> {location.name}
-                  </p>
-                  <p>
-                    <strong>Address:</strong> {location.street}, {location.city}
-                    , {location.state} {location.zip}
-                  </p>
-                  <p>
-                    <strong>Distance:</strong>{' '}
-                    {location.distance !== undefined
-                      ? location.distance.toFixed(2)
-                      : 'N/A'}{' '}
-                    miles
-                  </p>
-                </div>
-              ))
+        <div className='max-w-3xl mx-auto'>
+          {isSearchClicked ? (
+            matchingLocations.length > 0 ? (
+              <div className='space-y-4'>
+                {matchingLocations
+                  .sort((a, b) => a.distance - b.distance)
+                  .map((location) => (
+                    <div
+                      key={location.id}
+                      className='bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl'
+                    >
+                      <h3 className='text-xl font-semibold text-[#234E13] mb-2'>
+                        {location.name}
+                      </h3>
+                      <p className='text-gray-600 mb-2'>
+                        <strong>Item:</strong> {location.item}
+                      </p>
+                      <p className='text-gray-600 mb-2'>
+                        <strong>Address:</strong> {location.street},{' '}
+                        {location.city}, {location.state} {location.zip}
+                      </p>
+                      <p className='text-gray-600'>
+                        <strong>Distance:</strong>{' '}
+                        {location.distance !== undefined
+                          ? `${location.distance.toFixed(2)} miles`
+                          : 'N/A'}
+                      </p>
+                    </div>
+                  ))}
+              </div>
+            ) : (
+              <p className='text-center text-gray-600 text-lg'>
+                No matching locations found for "{searchQuery}".
+              </p>
+            )
           ) : (
-            <p className='text-gray-500'>
-              No matching locations found for "{searchQuery}".
+            <p className='text-center text-gray-600 text-lg'>
+              Enter an item and press "Search" to find recycling locations.
             </p>
-          )
-        ) : (
-          <p className='text-gray-500'>Press "Search" to find locations.</p>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
