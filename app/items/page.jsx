@@ -38,6 +38,7 @@ function Items() {
   const [isSearchClicked, setIsSearchClicked] = useState(false); // State to track button click
   const [distanceFilter, setDistanceFilter] = useState(0); // State for distance filter
   const [filteredItems, setFilteredItems] = useState([]); // State for filtered item list
+  const [selectedFromDropdown, setSelectedFromDropdown] = useState(false); // Track if item was selected from dropdown
 
   // Get user's current location
   const getUserLocation = () => {
@@ -118,12 +119,14 @@ function Items() {
   const handleItemSelect = (item) => {
     setSearchQuery(item);
     setFilteredItems([]); // Clear the filtered items when an item is selected
+    setSelectedFromDropdown(true);
   };
 
   // Filter the items as the user types
   const handleSearchQueryChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
+    setSelectedFromDropdown(false);
 
     if (query) {
       // Filter items that start with the query (case-insensitive)
@@ -133,6 +136,23 @@ function Items() {
       setFilteredItems(filtered);
     } else {
       setFilteredItems([]); // Clear suggestions when input is empty
+    }
+  };
+
+  // Handle key press for search input
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      if (selectedFromDropdown) {
+        // If item is already selected from dropdown, fetch locations
+        setIsSearchClicked(true);
+        fetchLocations();
+      } else if (filteredItems.length > 0) {
+        // If first enter press with dropdown items, select first item
+        const selectedItem = filteredItems[0];
+        setSearchQuery(selectedItem);
+        setFilteredItems([]);
+        setSelectedFromDropdown(true);
+      }
     }
   };
 
@@ -155,6 +175,7 @@ function Items() {
                 type='text'
                 value={searchQuery}
                 onChange={handleSearchQueryChange}
+                onKeyPress={handleKeyPress}
                 placeholder='Enter an item name (e.g., Magazines)'
                 className='w-full px-6 py-3 pr-12 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#234E13] focus:border-transparent transition-all duration-200'
               />
