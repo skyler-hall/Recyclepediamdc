@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Navbar from './components/Navbar';
 import NavigationCard from './components/home_components/NavigationCard';
-import NewsletterBar from './components/home_components/NewsletterBar';
+// import NewsletterBar from './components/home_components/NewsletterBar';
 import Header from './components/home_components/Header';
 import PageCards from './components/home_components/PageCards';
 import CommunitySection from './components/home_components/CommunitySection';
@@ -19,9 +19,9 @@ export default function Home() {
       <div id='pagecards'>
         <PageCards />
       </div>
-      <div id='newsletter'>
+      {/* <div id='newsletter'>
         <NewsletterBar />
-      </div>
+      </div> */}
       <div id='community'>
         <CommunitySection />
       </div>
