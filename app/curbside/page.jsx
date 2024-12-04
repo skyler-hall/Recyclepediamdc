@@ -33,7 +33,7 @@ function Curbside() {
             Curbside Pickup Items
           </h1>
           <p className='text-gray-600 text-lg md:text-xl'>
-            Find out what you can recycle in {city || 'your city'}
+            Find out what you can recycle in {city || 'your municipality'}
           </p>
         </div>
 
@@ -53,7 +53,6 @@ function Curbside() {
         {city && (
           <div className='max-w-3xl mx-auto'>
             <div className='bg-white rounded-2xl shadow-lg p-6 mb-8'>
-              {/* Search Bar */}
               <div className='mb-6'>
                 <div className='relative'>
                   <input
