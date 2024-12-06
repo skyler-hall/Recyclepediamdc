@@ -47,13 +47,12 @@ const Header = () => {
 
     const GetStartedNav = () => {
         return(
-            <div className={`absolute flex flex-col overflow-hidden transition-colors duration-300 ${expand ? 'h-max max-h-max p-4 px-6 rounded-2xl bg-gray-100 border-2 shadow-lg' : 'max-h-0'}`}>
+            <div className={`absolute inset-x-0 lg:inset-x-auto flex flex-col overflow-hidden transition-colors duration-300 ${expand ? 'h-max max-h-max p-4 px-6 rounded-2xl bg-gray-100 border-2 shadow-lg' : 'max-h-0'}`}>
                 <ul className="flex flex-col">
                     {
                         dropdownItems && dropdownItems.map((option, index) => (
                             <li key={index} className="transition-all duration-300 ease-in-out hover:text-[#234E13]">
                                 <Link href={option.link} style={linkStyle}>{option.text}</Link>
-
                             </li>
                         ))
                     }
@@ -61,7 +60,6 @@ const Header = () => {
             </div>
         )
     }
-
 
     return (
         <div className="lg:flex justify-between items-center mx-auto mb-24">
@@ -78,7 +76,7 @@ const Header = () => {
 
                     Through engaging content and interactive lessons, Recyclepedia likely aims
                     to inspire younger generations to understand recycling, waste management, and environmental stewardship, making
-                    climate-friendly practices <span className="text-[#234E13] font-bold"> accessible and interesting for students </span>.
+                    climate-friendly practices <span className="text-[#234E13] font-bold"> accessible and interesting for students. </span>
                 </p>
                 <div className="lg:hidden lg:w-2/5 p-2 mb-8"> {/*Image display for smaller screens, tablets*/}
                     <img src='home_img.png' alt='Recycling sign with recyclables in the background'/>
