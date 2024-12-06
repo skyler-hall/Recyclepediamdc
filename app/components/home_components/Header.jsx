@@ -53,7 +53,6 @@ const Header = () => {
                         dropdownItems && dropdownItems.map((option, index) => (
                             <li key={index} className="transition-all duration-300 ease-in-out hover:text-[#234E13]">
                                 <Link href={option.link} style={linkStyle}>{option.text}</Link>
-
                             </li>
                         ))
                     }
