@@ -4,7 +4,7 @@ import NavigationCard from "./NavigationCard"
 export const pages = [
     {
       pageName: "Curbside Pickup",
-      pageDesc: "See your municipality's curbside pickup recycling.",
+      pageDesc: "See curbside pickup recycling options by municipality for your single family home, or alternatives for other buildings.",
       pageLink: "/curbside",
     },
     {
