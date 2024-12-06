@@ -82,6 +82,57 @@ function Curbside() {
               />
             </div>
 
+                        {/* Curbside Pickup Do's and Don'ts Section */}
+                        <div className='text-center bg-white p-8 rounded-2xl shadow-lg mb-8'>
+              <h2 className='text-2xl font-bold text-[#234E13] mb-4'>
+                Curbside Pickup Do’s and Don’t’s
+              </h2>
+
+              <div className='space-y-6'>
+                <div>
+                  <h3 className='text-xl font-medium text-[#234E13]'>Paper</h3>
+                  <p className='text-gray-700'>
+                    Clean and dry newspaper, magazines, catalogs, telephone books, printer paper, copier paper, mail, and all other office paper without wax liners.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-xl font-medium text-[#234E13]'>Cardboard</h3>
+                  <p className='text-gray-700'>
+                    Packing boxes, cereal boxes, pizza boxes, gift boxes, and corrugated cardboard. Flatten all boxes before placing them in your cart.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-xl font-medium text-[#234E13]'>Cans</h3>
+                  <p className='text-gray-700'>
+                    Steel and aluminum food and beverage cans. Aluminum bottles are also accepted.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-xl font-medium text-[#234E13]'>Cartons</h3>
+                  <p className='text-gray-700'>
+                    Aseptic poly-coated drink boxes, juice cartons, and milk cartons.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-xl font-medium text-[#234E13]'>Bottles (plastic & glass)</h3>
+                  <p className='text-gray-700'>
+                    Plastic bottles such as milk, water, detergent, soda, and shampoo bottles (flatten and replace the cap); glass bottles.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-xl font-medium text-[#234E13]'>Plastic tubs and jugs</h3>
+                  <p className='text-gray-700'>
+                    Plastic tubs, such as butter or yogurt tubs, and plastic jugs, such as milk or detergent jugs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Item not listed section */}
             <div className='text-center bg-white p-8 rounded-2xl shadow-lg'>
               <p className='text-xl font-medium text-gray-700 mb-4'>
