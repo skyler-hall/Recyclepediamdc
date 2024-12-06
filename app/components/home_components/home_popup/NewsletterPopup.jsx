@@ -1,35 +1,30 @@
-"use client"
+'use client';
 
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
-const NewsletterPopup = (show) => {
+function NewsletterPopup() {
+  useEffect(() => {
+    // create script for Constant Contact configuration
+    const configScript = document.createElement('script');
+    configScript.text = 'var _ctct_m = "f12cbddd5f03acd0b06a5a62b116f5f3";';
 
-    const newsletterScript = (scriptUrl) => {
-        useEffect(() => {
-            window._ctct_m = "f12cbddd5f03acd0b06a5a62b116f5f3"; //defines a global variable to run the script
-            const head = document.querySelector('head')
-            const scriptElement = document.createElement('script')
-            scriptElement.setAttribute('src', scriptUrl)
-            scriptElement.setAttribute('id', 'signupScript')
-            scriptElement.setAttribute('async', '')
-            scriptElement.setAttribute('defer', '')
+    const signupScript = document.createElement('script');
+    signupScript.id = 'signupScript';
+    signupScript.src =
+      '//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js';
+    signupScript.async = true;
+    signupScript.defer = true;
 
-            head.appendChild(scriptElement)
+    document.body.appendChild(configScript);
+    document.body.appendChild(signupScript);
 
-            return () => {
-                head.removeChild(scriptElement)
-            }
-        }, [scriptUrl, show])
-    }
+    return () => {
+      document.body.removeChild(configScript);
+      document.body.removeChild(signupScript);
+    };
+  }, []);
 
-    
-    return(
-        <div>
-            {
-                newsletterScript("//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js")
-            }
-        </div>
-    )
+  return <div id='constant-contact-form'></div>;
 }
 
-export default NewsletterPopup
+export default NewsletterPopup;
