@@ -47,7 +47,7 @@ const Header = () => {
 
     const GetStartedNav = () => {
         return(
-            <div className={`absolute flex flex-col overflow-hidden transition-colors duration-300 ${expand ? 'h-max max-h-max p-4 px-6 rounded-2xl bg-gray-100 border-2 shadow-lg' : 'max-h-0'}`}>
+            <div className={`absolute inset-x-0 lg:inset-x-auto flex flex-col overflow-hidden transition-colors duration-300 ${expand ? 'h-max max-h-max p-4 px-6 rounded-2xl bg-gray-100 border-2 shadow-lg' : 'max-h-0'}`}>
                 <ul className="flex flex-col">
                     {
                         dropdownItems && dropdownItems.map((option, index) => (
@@ -60,7 +60,6 @@ const Header = () => {
             </div>
         )
     }
-
 
     return (
         <div className="lg:flex justify-between items-center mx-auto mb-24">

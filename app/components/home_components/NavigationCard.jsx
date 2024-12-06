@@ -32,7 +32,7 @@ const NavigationCard = ({navCardDetails}) => {
 
         //takes the location, returns the information corresponding to it
         return(
-            <div className="md:w-[700px] h-fit flex flex-col md:flex-row items-center justify-center gap-4 py-6 px-6 m-2 rounded-2xl shadow-xl bg-[#a9def9] fixed inset-0 md:top-[calc(50vh-25%)] md:left-[calc(50vw-25%)]">
+            <div className="md:w-[700px] h-fit flex flex-col md:flex-row items-center justify-center gap-4 py-6 px-6 m-2 rounded-2xl shadow-xl bg-[#a9def9] fixed inset-0 md:top-[calc(50vh-25%)] md:left-[calc(50vw-47%)] lg:left-[calc(50vw-35%)] xl:left-[calc(50vw-25%)]">
                 <div className="md:w-1/5 px-4">
                     <IconContext.Provider value={{color: "gray", size: "5rem"}}>
                         <LuInfo />
@@ -71,9 +71,9 @@ const NavigationCard = ({navCardDetails}) => {
                 <h6 className="text-l m-2 mb-8">{navCardDetails.pageDesc}</h6>
                 {
                     navCardDetails.pageName == 'Curbside Pickup' ? (
-                        <div className="-mt-2">
+                        <div className="-mt-2 relative">
                             <button onClick={() => setIsOpen(!isOpen)} className="bg-[#234E13] text-white font-bold rounded-2xl px-6 py-1">Select</button>
-                            <ul className={`overflow-hidden transition-all duration-300 ease-in px-2 w-fit mx-auto mt-1 ${isOpen ? 'h-fit p-2 bg-[#234E13] rounded-2xl' : 'max-h-0'}`}>
+                            <ul className={`absolute inset-x-0 overflow-hidden transition-all duration-300 ease-in px-2 w-fit mx-auto mt-1 ${isOpen ? 'h-fit p-2 bg-[#234E13] rounded-2xl' : 'max-h-0'}`}>
                                 <li>
                                     <Link href={navCardDetails.pageLink} onClick={() => setIsOpen(false)} className="text-white font-bold px-6 py-4 transition-colors">
                                         Single-Family
@@ -90,7 +90,7 @@ const NavigationCard = ({navCardDetails}) => {
                                     </button>
                                 </li>
                             </ul>
-                            <div className={`transition-all duration-300 ease-in-out ${popupShown ? 'fixed w-screen h-screen bg-gray-600/75 inset-0 z-50' : 'max-h-0'}`}>
+                            <div className={`transition-all duration-300 ease-in-out ${popupShown ? 'fixed w-screen h-screen md:bg-gray-600/75 inset-0 z-50' : 'max-h-0'}`}>
                                 {
                                     location && 
                                     <InfoPopup />
