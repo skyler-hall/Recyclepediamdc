@@ -81,7 +81,7 @@ function Learn() {
        <h1 className='text-5xl font-bold text-center w-full p-4 bg-[#a9def9] text-black '>
           Learn 
         </h1>
-        <hr class="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
+        <hr className="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
         <h2 className="text-5xl font-bold text-center mb-4 mt-4">Recycling Tips</h2>
         <div className="flex flex-col items-center">
           <select
