@@ -14,11 +14,11 @@
 
 ## Calendar Events
 
-Instructions for updating calendar events will be added here.
+Instructions for updating calendar events will be added here shortly.
 
 ## Advertisements
 
-Instructions for updating advertisements will be added here.
+Instructions for updating advertisements will be added here shortly.
 
 ## Home Page Text
 
@@ -26,11 +26,11 @@ Please contact a [project maintainer](maintainers.md#primary-contacts) to update
 
 ## Curbside Items Data
 
-Instructions for updating curbside items data will be added here.
+Instructions for updating curbside items data will be added here shortly.
 
 ## Items Page Data
 
-Instructions for updating items page data will be added here.
+Instructions for updating items page data will be added here shortly.
 
 ## Learn Page Content
 
