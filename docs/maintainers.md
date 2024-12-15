@@ -1,6 +1,16 @@
 # Project Maintainers
 
-_Last Updated: December 15, 2024, 4:45 PM EST_
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- Remember to update the "Last Updated" timestamp below when making changes to this file -->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+_Last Updated: December 15, 2024, 5:01 PM EST_
 
 This document lists the current maintainers of the Recyclepedia MDC project and who to contact for immediate assistance.
 
