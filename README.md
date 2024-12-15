@@ -13,3 +13,4 @@ Recyclepedia MDC is a comprehensive platform promoting Miami-Dade's zero waste i
 
 - [Contributing](docs/contributing.md)
 - [Content Updates](docs/content_updates.md)
+- [Project Maintainers](docs/maintainers.md)
