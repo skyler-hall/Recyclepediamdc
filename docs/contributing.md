@@ -5,6 +5,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Basic Git Workflow](#basic-git-workflow)
 
 ## Getting started
 
