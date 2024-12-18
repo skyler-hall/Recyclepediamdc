@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useState, useTransition, useRef, useEffect } from 'react';
 import { HiChevronDown } from 'react-icons/hi';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 
@@ -10,9 +10,26 @@ function TranslationDropdown() {
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
+  const dropdownRef = useRef(null);
 
   // Define available locales
   const locales = ['en', 'es'];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handleLanguageSelect = (locale) => {
     startTransition(() => {
@@ -24,7 +41,7 @@ function TranslationDropdown() {
   };
 
   return (
-    <div className='relative'>
+    <div className='relative' ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors ${
