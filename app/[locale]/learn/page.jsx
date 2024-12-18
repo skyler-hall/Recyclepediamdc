@@ -6,7 +6,7 @@ import GamesCarousel from '../components/learn_components/GamesCarousel';
 import GetInvolved from '../components/learn_components/GetInvolved';
 import WatchAndLearn from '../components/learn_components/WatchAndLearn';
 import GreenSchools from '../components/learn_components/GreenSchools';
-import { learnPageData } from '../../data/learn/learnPageData';
+import { learnPageData } from '../../../data/learn/learnPageData';
 
 export default function Learn() {
   return (

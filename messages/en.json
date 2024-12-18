@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "title": "Waste Made Simple",
+    "subtitle": "Empowering Miami's Youth in Climate Action",
+    "purpose": {
+      "start": "The purpose of Recyclepedia is to",
+      "highlight1": "educate and empower youth",
+      "middle": ", particularly in Miami, about",
+      "highlight2": "climate action and sustainable practices.",
+      "description": "Through engaging content and interactive lessons, Recyclepedia likely aims to inspire younger generations to understand recycling, waste management, and environmental stewardship, making climate-friendly practices",
+      "highlight3": "accessible and interesting for students."
+    },
+    "getStarted": {
+      "button": "Get Started",
+      "expanded": "I want to...",
+      "options": {
+        "learn": "Recycle something, but I'm not sure of it.",
+        "newsletter": "Join the newsletter",
+        "items": "Drop off recyclable items",
+        "curbside": "Put something in my recycling bin",
+        "community": "Make a change",
+        "about": "Learn about Recyclepedia",
+        "contact": "Get in touch"
+      }
+    }
+  }
+}

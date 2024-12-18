@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "title": "Gestión de Residuos Simplificada",
+    "subtitle": "Empoderando a la Juventud de Miami en la Acción Climática",
+    "purpose": {
+      "start": "El propósito de Recyclepedia es",
+      "highlight1": "educar y empoderar a los jóvenes",
+      "middle": ", particularmente en Miami, sobre",
+      "highlight2": "acción climática y prácticas sostenibles.",
+      "description": "A través de contenido atractivo y lecciones interactivas, Recyclepedia busca inspirar a las generaciones más jóvenes a comprender el reciclaje, la gestión de residuos y la administración ambiental, haciendo que las prácticas amigables con el clima sean",
+      "highlight3": "accesibles e interesantes para los estudiantes."
+    },
+    "getStarted": {
+      "button": "Comenzar",
+      "expanded": "Quiero...",
+      "options": {
+        "learn": "Reciclar algo, pero no estoy seguro.",
+        "newsletter": "Unirme al boletín",
+        "items": "Dejar artículos reciclables",
+        "curbside": "Poner algo en mi contenedor de reciclaje",
+        "community": "Hacer un cambio",
+        "about": "Conocer más sobre Recyclepedia",
+        "contact": "Ponerme en contacto"
+      }
+    }
+  }
+}
