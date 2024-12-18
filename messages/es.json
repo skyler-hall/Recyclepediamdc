@@ -235,6 +235,18 @@
         "El reciclaje es una práctica esencial que ayuda a reducir los residuos, conservar los recursos naturales y minimizar el impacto ambiental de la actividad humana. Al convertir materiales como plástico, papel, vidrio y metales en nuevos productos, el reciclaje evita que estos artículos terminen en vertederos, donde pueden tardar décadas en descomponerse.",
         "El reciclaje también ayuda a reducir los gases de efecto invernadero como el dióxido de carbono, metano, óxido nitroso y más. Además, ayuda a reducir la contaminación de nuestro medio ambiente, agua y aire. En última instancia, el reciclaje es una iniciativa que ayuda a reducir los impactos climáticos globales al reducir las emisiones de gases de efecto invernadero. Beneficia a nuestras comunidades, empresas y el medio ambiente al reducir la contaminación, disminuir la demanda de materias primas y crear nuevas oportunidades de trabajo en las industrias del reciclaje."
       ]
+    },
+    "games": {
+      "title": "Juegos Educativos",
+      "game1": {
+        "title": "Actividades de las Naciones Unidas"
+      },
+      "game2": {
+        "title": "Juego de Niños del Clima"
+      },
+      "game3": {
+        "title": "Juegos de la Agencia de Protección Ambiental"
+      }
     }
   }
 }

@@ -1,10 +1,29 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { games } from '@/data/learn/learnGamesData';
+import { useTranslations } from 'next-intl';
 
 export default function GamesCarousel() {
+  const t = useTranslations('LearnPage.games');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+
+  const games = [
+    {
+      title: t('game1.title'),
+      imageSrc: '/img/un-ep.png',
+      link: '',
+    },
+    {
+      title: t('game2.title'),
+      imageSrc: '/img/climate-kids.png',
+      link: '',
+    },
+    {
+      title: t('game3.title'),
+      imageSrc: '/img/epa.png',
+      link: 'https://www.epa.gov/students/games-quizzes-and-videos-about-environment',
+    },
+  ];
 
   useEffect(() => {
     if (!isHovered) {
@@ -19,7 +38,7 @@ export default function GamesCarousel() {
   return (
     <div className='bg-white rounded-2xl shadow-lg p-6 h-full'>
       <h2 className='text-2xl font-semibold text-[#234E13] mb-4'>
-        Educational Games
+        {t('title')}
       </h2>
       <div
         className='relative overflow-hidden rounded-lg h-[calc(100%-4rem)]'
