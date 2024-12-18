@@ -48,6 +48,60 @@
       "description": "Stay up to date with the latest news in sustainability, initiatives, and events from Dream in Green!",
       "button": "Sign Up",
       "link": "https://dreamingreen.org/latest-news/"
+    },
+    "community": {
+      "title": "In the Community",
+      "calendar": {
+        "title": "Community Calendar",
+        "description": "Get involved with your community and make a difference by exploring local events, activities, and more!"
+      },
+      "adSpace": {
+        "title": "Ad Space"
+      }
+    }
+  },
+  "CurbsidePage": {
+    "title": "Curbside Pickup Items",
+    "subtitle": "Find out what you can recycle in {city}",
+    "subtitleDefault": "your municipality",
+    "citySelector": {
+      "label": "Select your city:"
+    },
+    "search": {
+      "placeholder": "Search for recycling items..."
+    },
+    "guidelines": {
+      "title": "Curbside Pickup Do's and Don't's",
+      "categories": {
+        "paper": {
+          "title": "Paper",
+          "description": "Clean and dry newspaper, magazines, catalogs, telephone books, printer paper, copier paper, mail, and all other office paper without wax liners."
+        },
+        "cardboard": {
+          "title": "Cardboard",
+          "description": "Packing boxes, cereal boxes, pizza boxes, gift boxes, and corrugated cardboard. Flatten all boxes before placing them in your cart."
+        },
+        "cans": {
+          "title": "Cans",
+          "description": "Steel and aluminum food and beverage cans. Aluminum bottles are also accepted."
+        },
+        "cartons": {
+          "title": "Cartons",
+          "description": "Aseptic poly-coated drink boxes, juice cartons, and milk cartons."
+        },
+        "bottles": {
+          "title": "Bottles (plastic & glass)",
+          "description": "Plastic bottles such as milk, water, detergent, soda, and shampoo bottles (flatten and replace the cap); glass bottles."
+        },
+        "plasticTubs": {
+          "title": "Plastic tubs and jugs",
+          "description": "Plastic tubs, such as butter or yogurt tubs, and plastic jugs, such as milk or detergent jugs."
+        }
+      }
+    },
+    "notListed": {
+      "message": "Can't find what you're looking for?",
+      "button": "Find Alternative Recycling Options"
     }
   }
 }

@@ -48,6 +48,60 @@
       "description": "¡Mantente al día con las últimas noticias sobre sostenibilidad, iniciativas y eventos de Dream in Green!",
       "button": "Suscribirse",
       "link": "https://dreamingreen.org/latest-news/"
+    },
+    "community": {
+      "title": "En la Comunidad",
+      "calendar": {
+        "title": "Calendario Comunitario",
+        "description": "¡Involúcrate con tu comunidad y marca la diferencia explorando eventos locales, actividades y más!"
+      },
+      "adSpace": {
+        "title": "Espacio Publicitario"
+      }
+    }
+  },
+  "CurbsidePage": {
+    "title": "Artículos para Recolección en la Acera",
+    "subtitle": "Descubre qué puedes reciclar en {city}",
+    "subtitleDefault": "tu municipio",
+    "citySelector": {
+      "label": "Selecciona tu ciudad:"
+    },
+    "search": {
+      "placeholder": "Buscar artículos para reciclar..."
+    },
+    "guidelines": {
+      "title": "Qué Hacer y No Hacer en la Recolección en la Acera",
+      "categories": {
+        "paper": {
+          "title": "Papel",
+          "description": "Periódicos limpios y secos, revistas, catálogos, guías telefónicas, papel de impresora, papel de copiadora, correo y todo otro papel de oficina sin revestimientos de cera."
+        },
+        "cardboard": {
+          "title": "Cartón",
+          "description": "Cajas de embalaje, cajas de cereal, cajas de pizza, cajas de regalo y cartón corrugado. Aplana todas las cajas antes de colocarlas en tu contenedor."
+        },
+        "cans": {
+          "title": "Latas",
+          "description": "Latas de alimentos y bebidas de acero y aluminio. También se aceptan botellas de aluminio."
+        },
+        "cartons": {
+          "title": "Cartones",
+          "description": "Cajas de bebidas asépticas recubiertas de polietileno, cartones de jugo y cartones de leche."
+        },
+        "bottles": {
+          "title": "Botellas (plástico y vidrio)",
+          "description": "Botellas de plástico como las de leche, agua, detergente, refresco y champú (aplanar y volver a colocar la tapa); botellas de vidrio."
+        },
+        "plasticTubs": {
+          "title": "Recipientes y jarras de plástico",
+          "description": "Recipientes de plástico, como los de mantequilla o yogur, y jarras de plástico, como las de leche o detergente."
+        }
+      }
+    },
+    "notListed": {
+      "message": "¿No encuentras lo que buscas?",
+      "button": "Encuentra Opciones Alternativas de Reciclaje"
     }
   }
 }
