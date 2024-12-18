@@ -130,5 +130,9 @@
       "distanceValue": "{distance} millas",
       "distanceNA": "N/D"
     }
+  },
+  "LearnPage": {
+    "title": "Aprende Sobre el Reciclaje",
+    "subtitle": "Explora la educación sobre el reciclaje y participa en tu comunidad"
   }
 }

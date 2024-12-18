@@ -6,19 +6,20 @@ import GamesCarousel from '../components/learn_components/GamesCarousel';
 import GetInvolved from '../components/learn_components/GetInvolved';
 import WatchAndLearn from '../components/learn_components/WatchAndLearn';
 import GreenSchools from '../components/learn_components/GreenSchools';
-import { learnPageData } from '../../../data/learn/learnPageData';
+
+import { useTranslations } from 'next-intl';
 
 export default function Learn() {
+  const t = useTranslations('LearnPage');
+
   return (
     <div className='min-h-screen bg-gradient-to-b from-white to-[#DBF4D2]/20'>
       <div className='max-w-6xl mx-auto px-4 py-12'>
         <div className='text-center mb-12'>
           <h1 className='text-4xl md:text-5xl font-bold text-[#234E13] mb-4'>
-            {learnPageData.title}
+            {t('title')}
           </h1>
-          <p className='text-gray-600 text-lg md:text-xl'>
-            {learnPageData.subtitle}
-          </p>
+          <p className='text-gray-600 text-lg md:text-xl'>{t('subtitle')}</p>
         </div>
 
         <RecyclingTips />
