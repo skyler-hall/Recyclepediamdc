@@ -247,6 +247,27 @@
       "game3": {
         "title": "Environmental Protection Agency Games"
       }
+    },
+    "getInvolved": {
+      "title": "Get Involved",
+      "items": {
+        "volunteerCleanup": {
+          "title": "Volunteer Clean Up",
+          "description": "VolunteerCleanup.Org engages volunteers to cleanup their neighborhoods, shorelines, and waterways as a way to raise awareness about marine debris and encourage people to reduce their reliance on single-use plastics."
+        },
+        "composting": {
+          "title": "Composting",
+          "description": "Composting is the process of turning organic waste into nutrient-rich soil through natural decomposition. It's an eco-friendly way to reduce waste and enrich soil.\nGet started with the resource below!",
+          "links": {
+            "homeComposting": "Home Composting",
+            "ufComposting": "UF/IFAS Composting"
+          }
+        },
+        "handsOnMiami": {
+          "title": "Hands On Miami",
+          "description": "Become a volunteer & make difference in the community!"
+        }
+      }
     }
   }
 }

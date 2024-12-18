@@ -247,6 +247,27 @@
       "game3": {
         "title": "Juegos de la Agencia de Protección Ambiental"
       }
+    },
+    "getInvolved": {
+      "title": "Participa",
+      "items": {
+        "volunteerCleanup": {
+          "title": "Limpieza Voluntaria",
+          "description": "VolunteerCleanup.Org involucra a voluntarios para limpiar sus vecindarios, costas y vías fluviales como una forma de crear conciencia sobre los desechos marinos y alentar a las personas a reducir su dependencia de los plásticos de un solo uso."
+        },
+        "composting": {
+          "title": "Compostaje",
+          "description": "El compostaje es el proceso de convertir residuos orgánicos en suelo rico en nutrientes a través de la descomposición natural. Es una forma ecológica de reducir los residuos y enriquecer el suelo.\n¡Comienza con el recurso a continuación!",
+          "links": {
+            "homeComposting": "Compostaje en Casa",
+            "ufComposting": "Compostaje UF/IFAS"
+          }
+        },
+        "handsOnMiami": {
+          "title": "Hands On Miami",
+          "description": "¡Conviértete en voluntario y marca la diferencia en la comunidad!"
+        }
+      }
     }
   }
 }

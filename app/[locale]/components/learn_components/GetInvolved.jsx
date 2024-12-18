@@ -1,10 +1,47 @@
-import { involvementItems } from '@/data/learn/getInvolvedData';
+'use client';
+import { useTranslations } from 'next-intl';
 
 export default function GetInvolved() {
+  const t = useTranslations('LearnPage.getInvolved');
+
+  const involvementItems = [
+    {
+      title: t('items.volunteerCleanup.title'),
+      image: '/img/involved1.png',
+      imageAlt: t('items.volunteerCleanup.title'),
+      link: 'https://volunteercleanup.org/',
+      description: t('items.volunteerCleanup.description'),
+    },
+    {
+      title: t('items.composting.title'),
+      image: '/img/composting.webp',
+      imageAlt: t('items.composting.title'),
+      link: 'https://www.miamidade.gov/global/solidwaste/home-composting.page',
+      description: t('items.composting.description'),
+      additionalLinks: [
+        {
+          text: t('items.composting.links.homeComposting'),
+          url: 'https://www.miamidade.gov/global/solidwaste/home-composting.page',
+        },
+        {
+          text: t('items.composting.links.ufComposting'),
+          url: 'https://sfyl.ifas.ufl.edu/sarasota/natural-resources/waste-reduction/composting/',
+        },
+      ],
+    },
+    {
+      title: t('items.handsOnMiami.title'),
+      image: '/img/handson.jpeg',
+      imageAlt: t('items.handsOnMiami.title'),
+      link: 'https://www.handsonmiami.org/about-membership?layoutViewMode=tablet',
+      description: t('items.handsOnMiami.description'),
+    },
+  ];
+
   return (
     <div className='mt-12'>
       <h2 className='text-2xl font-semibold text-[#234E13] mb-6'>
-        Get Involved
+        {t('title')}
       </h2>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
         {involvementItems.map((item, index) => (
