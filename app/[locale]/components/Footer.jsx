@@ -16,7 +16,7 @@ function Footer() {
       <div className='container mx-auto flex flex-col md:flex-row items-center justify-between'>
         {/* Copyright Text */}
         <div className='text-center md:text-left mb-4 md:mb-0'>
-          <p>© 2024 Recyclepedia</p>
+          <p>© 2024 Recyclepedia | INIT Build 2024</p>
         </div>
 
         {/* Navigation Links */}
