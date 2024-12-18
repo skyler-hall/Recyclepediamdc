@@ -103,5 +103,32 @@
       "message": "Can't find what you're looking for?",
       "button": "Find Alternative Recycling Options"
     }
+  },
+  "ItemsPage": {
+    "title": "Find Recycling Locations",
+    "subtitle": "Discover where to recycle specific items in your area",
+    "search": {
+      "placeholder": "Enter an item name (e.g., Magazines)",
+      "button": "Search Locations",
+      "noResults": "No matching locations found for \"{query}\".",
+      "initialMessage": "Enter an item and press \"Search\" to find recycling locations.",
+      "loading": "Loading locations..."
+    },
+    "distanceFilter": {
+      "label": "Filter by distance:",
+      "options": {
+        "all": "All",
+        "5": "5 miles",
+        "10": "10 miles",
+        "15": "15 miles"
+      }
+    },
+    "locationCard": {
+      "item": "Item",
+      "address": "Address",
+      "distance": "Distance",
+      "distanceValue": "{distance} miles",
+      "distanceNA": "N/A"
+    }
   }
 }

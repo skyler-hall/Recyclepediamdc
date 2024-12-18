@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { db } from '@/lib/firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { availableItems } from '@/data/availableItems';
@@ -8,8 +9,8 @@ import Image from 'next/image';
 
 // Haversine formula to calculate distance
 const haversine = (lat1, lon1, lat2, lon2) => {
-  const R = 6371; // Earth's radius in km
-  const toRad = (value) => value * (Math.PI / 180); // Convert degrees to radians
+  const R = 6371;
+  const toRad = (value) => value * (Math.PI / 180);
 
   const deltaLat = toRad(lat2 - lat1);
   const deltaLon = toRad(lon2 - lon1);
@@ -23,22 +24,22 @@ const haversine = (lat1, lon1, lat2, lon2) => {
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-  const distanceKm = R * c; // Distance in kilometers
-  const distanceMiles = distanceKm * 0.621371; // Convert distance to miles
-  return distanceMiles; // Distance in miles
+  const distanceKm = R * c;
+  const distanceMiles = distanceKm * 0.621371;
+  return distanceMiles;
 };
 
 function Items() {
-  // State to store search query, user location, and distances
-  const [searchQuery, setSearchQuery] = useState(''); // State for user input
-  const [userLocation, setUserLocation] = useState(null); // State for user location
-  const [matchingLocations, setMatchingLocations] = useState([]); // State for matching locations
-  const [loading, setLoading] = useState(false); // State for loading
-  const [error, setError] = useState(null); // State for errors
-  const [isSearchClicked, setIsSearchClicked] = useState(false); // State to track button click
-  const [distanceFilter, setDistanceFilter] = useState(0); // State for distance filter
-  const [filteredItems, setFilteredItems] = useState([]); // State for filtered item list
-  const [selectedFromDropdown, setSelectedFromDropdown] = useState(false); // Track if item was selected from dropdown
+  const t = useTranslations('ItemsPage');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [userLocation, setUserLocation] = useState(null);
+  const [matchingLocations, setMatchingLocations] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [isSearchClicked, setIsSearchClicked] = useState(false);
+  const [distanceFilter, setDistanceFilter] = useState(0);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [selectedFromDropdown, setSelectedFromDropdown] = useState(false);
 
   // Get user's current location
   const getUserLocation = () => {
@@ -161,11 +162,9 @@ function Items() {
       <div className='max-w-6xl mx-auto px-4 py-12'>
         <div className='text-center mb-12'>
           <h1 className='text-4xl md:text-5xl font-bold text-[#234E13] mb-4'>
-            Find Recycling Locations
+            {t('title')}
           </h1>
-          <p className='text-gray-600 text-lg md:text-xl'>
-            Discover where to recycle specific items in your area
-          </p>
+          <p className='text-gray-600 text-lg md:text-xl'>{t('subtitle')}</p>
         </div>
 
         <div className='max-w-xl mx-auto mb-8'>
@@ -176,7 +175,7 @@ function Items() {
                 value={searchQuery}
                 onChange={handleSearchQueryChange}
                 onKeyPress={handleKeyPress}
-                placeholder='Enter an item name (e.g., Magazines)'
+                placeholder={t('search.placeholder')}
                 className='w-full px-6 py-3 pr-12 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#234E13] focus:border-transparent transition-all duration-200'
               />
               <div className='absolute right-4 top-1/2 -translate-y-1/2'>
@@ -210,12 +209,12 @@ function Items() {
               onClick={handleSearch}
               className='px-8 py-3 bg-[#234E13] text-white rounded-xl hover:bg-[#1a3b0e] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg'
             >
-              Search Locations
+              {t('search.button')}
             </button>
 
             <div className='flex items-center gap-2'>
               <label htmlFor='distanceFilter' className='text-gray-700'>
-                Filter by distance:
+                {t('distanceFilter.label')}
               </label>
               <select
                 id='distanceFilter'
@@ -223,17 +222,17 @@ function Items() {
                 onChange={(e) => setDistanceFilter(Number(e.target.value))}
                 className='px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#234E13] focus:border-transparent'
               >
-                <option value={0}>All</option>
-                <option value={5}>5 miles</option>
-                <option value={10}>10 miles</option>
-                <option value={15}>15 miles</option>
+                <option value={0}>{t('distanceFilter.options.all')}</option>
+                <option value={5}>{t('distanceFilter.options.5')}</option>
+                <option value={10}>{t('distanceFilter.options.10')}</option>
+                <option value={15}>{t('distanceFilter.options.15')}</option>
               </select>
             </div>
           </div>
         </div>
 
         {loading && (
-          <div className='text-center text-gray-600'>Loading locations...</div>
+          <div className='text-center text-gray-600'>{t('search.loading')}</div>
         )}
         {error && <div className='text-center text-red-500'>{error}</div>}
 
@@ -252,29 +251,33 @@ function Items() {
                         {location.name}
                       </h3>
                       <p className='text-gray-600 mb-2'>
-                        <strong>Item:</strong> {location.item}
+                        <strong>{t('locationCard.item')}:</strong>{' '}
+                        {location.item}
                       </p>
                       <p className='text-gray-600 mb-2'>
-                        <strong>Address:</strong> {location.street},{' '}
-                        {location.city}, {location.state} {location.zip}
+                        <strong>{t('locationCard.address')}:</strong>{' '}
+                        {location.street}, {location.city}, {location.state}{' '}
+                        {location.zip}
                       </p>
                       <p className='text-gray-600'>
-                        <strong>Distance:</strong>{' '}
+                        <strong>{t('locationCard.distance')}:</strong>{' '}
                         {location.distance !== undefined
-                          ? `${location.distance.toFixed(2)} miles`
-                          : 'N/A'}
+                          ? t('locationCard.distanceValue', {
+                              distance: location.distance.toFixed(2),
+                            })
+                          : t('locationCard.distanceNA')}
                       </p>
                     </div>
                   ))}
               </div>
             ) : (
               <p className='text-center text-gray-600 text-lg'>
-                No matching locations found for "{searchQuery}".
+                {t('search.noResults', { query: searchQuery })}
               </p>
             )
           ) : (
             <p className='text-center text-gray-600 text-lg'>
-              Enter an item and press "Search" to find recycling locations.
+              {t('search.initialMessage')}
             </p>
           )}
         </div>

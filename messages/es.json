@@ -103,5 +103,32 @@
       "message": "¿No encuentras lo que buscas?",
       "button": "Encuentra Opciones Alternativas de Reciclaje"
     }
+  },
+  "ItemsPage": {
+    "title": "Encuentra Lugares de Reciclaje",
+    "subtitle": "Descubre dónde reciclar artículos específicos en tu área",
+    "search": {
+      "placeholder": "Ingresa el nombre de un artículo (ej., Revistas)",
+      "button": "Buscar Lugares",
+      "noResults": "No se encontraron lugares para \"{query}\".",
+      "initialMessage": "Ingresa un artículo y presiona \"Buscar\" para encontrar lugares de reciclaje.",
+      "loading": "Cargando lugares..."
+    },
+    "distanceFilter": {
+      "label": "Filtrar por distancia:",
+      "options": {
+        "all": "Todos",
+        "5": "5 millas",
+        "10": "10 millas",
+        "15": "15 millas"
+      }
+    },
+    "locationCard": {
+      "item": "Artículo",
+      "address": "Dirección",
+      "distance": "Distancia",
+      "distanceValue": "{distance} millas",
+      "distanceNA": "N/D"
+    }
   }
 }
