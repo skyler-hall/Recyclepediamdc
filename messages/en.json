@@ -275,6 +275,18 @@
         "recyclingForKids": "Recycling for Kids | Learn how to Reduce, Reuse, and Recycle",
         "recyclingProcess": "Entire Recycling Process Explained"
       }
+    },
+    "greenSchools": {
+      "title": "Join the Green Schools Challenge",
+      "paragraphs": [
+        "K-12 students and teachers looking to learn more about waste reduction, energy efficiency, water conservation, and more, join the Green Schools Challenge to have access to full lesson plans to promote environmental stewardship.",
+        "This is an initiative to inspire students and teachers to adopt sustainable practices within their schools.",
+        "By participating, schools can make a lasting impact on their communities and the planet. Join us today and be part of the change!"
+      ],
+      "image": {
+        "alt": "Green Schools Challenge"
+      },
+      "button": "Join Now"
     }
   }
 }

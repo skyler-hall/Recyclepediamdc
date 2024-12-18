@@ -275,6 +275,18 @@
         "recyclingForKids": "Reciclaje para Niños | Aprende a Reducir, Reutilizar y Reciclar",
         "recyclingProcess": "Proceso Completo de Reciclaje Explicado"
       }
+    },
+    "greenSchools": {
+      "title": "Únete al Reto de Escuelas Verdes",
+      "paragraphs": [
+        "Estudiantes y maestros de K-12 que buscan aprender más sobre reducción de residuos, eficiencia energética, conservación del agua y más, únanse al Reto de Escuelas Verdes para tener acceso a planes completos de lecciones que promueven la administración ambiental.",
+        "Esta es una iniciativa para inspirar a estudiantes y maestros a adoptar prácticas sostenibles dentro de sus escuelas.",
+        "Al participar, las escuelas pueden tener un impacto duradero en sus comunidades y el planeta. ¡Únete hoy y sé parte del cambio!"
+      ],
+      "image": {
+        "alt": "Reto de Escuelas Verdes"
+      },
+      "button": "Únete Ahora"
     }
   }
 }
