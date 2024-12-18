@@ -288,5 +288,12 @@
       },
       "button": "Join Now"
     }
+  },
+  "AboutPage": {
+    "ourStory": {
+      "title": "Our Story",
+      "content": "Since 2006, Dream in Green (DIG) has empowered individuals, especially youth, to take a leading role in addressing climate change and other environmental challenges facing South Florida. By assisting schools, households, local governments, and businesses, DIG helps reduce their environmental footprint. Through partnerships within our community, we develop, implement, and oversee educational programs and workshops that promote environmentally sustainable behaviors among all age groups, with a particular emphasis on K-12 students.",
+      "learnMore": "Learn More"
+    }
   }
 }
