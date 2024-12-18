@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { cityData } from '../../../data/CityData';
 import CitySelector from '../components/CitySelector';
 import RecyclingList from '../components/RecyclingList';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 
 function Curbside() {

@@ -2,7 +2,6 @@
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import { useState } from 'react';
-import Link from 'next/link';
 import Partners from '../components/about_components/Partners';
 import Mission from '../components/about_components/Mission';
 import OurStory from '../components/about_components/OurStory';

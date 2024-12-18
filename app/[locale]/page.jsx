@@ -1,12 +1,8 @@
-import Link from 'next/link';
-import Navbar from './components/Navbar';
-import NavigationCard from './components/home_components/NavigationCard';
+// import NavigationCard from './components/home_components/NavigationCard';
 // import NewsletterBar from './components/home_components/NewsletterBar';
 import Header from './components/home_components/Header';
 import PageCards from './components/home_components/PageCards';
 import CommunitySection from './components/home_components/CommunitySection';
-import Footer from './components/Footer';
-import Calendar from './components/home_components/CalendarView';
 import NewsletterBanner from './components/home_components/NewsletterBanner';
 // import HomePopup from './components/home_components/home_popup/HomePopup';
 import NewsletterPopup from './components/home_components/home_popup/NewsletterPopup';
@@ -23,7 +19,9 @@ export default function Home() {
       {/* <div id='newsletter'>
         <NewsletterBar />
       </div> */}
-      <div id='newsletter'><NewsletterBanner /></div>
+      <div id='newsletter'>
+        <NewsletterBanner />
+      </div>
       <div id='community'>
         <CommunitySection />
       </div>
