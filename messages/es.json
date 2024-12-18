@@ -293,7 +293,17 @@
     "ourStory": {
       "title": "Nuestra Historia",
       "content": "Desde 2006, Dream in Green (DIG) ha empoderado a individuos, especialmente jóvenes, para tomar un papel principal en abordar el cambio climático y otros desafíos ambientales que enfrenta el Sur de Florida. Al asistir a escuelas, hogares, gobiernos locales y empresas, DIG ayuda a reducir su huella ambiental. A través de asociaciones dentro de nuestra comunidad, desarrollamos, implementamos y supervisamos programas educativos y talleres que promueven comportamientos ambientalmente sostenibles entre todos los grupos de edad, con un énfasis particular en estudiantes K-12.",
-      "learnMore": "Más Información"
+      "learnMore": "Más Información",
+      "mission": {
+        "title": "Nuestra Misión",
+        "mainContent": "En Dream in Green (DIG), reconocemos que la contaminación es uno de los mayores desafíos en el reciclaje, que ocurre cuando artículos no reciclables ingresan al sistema de reciclaje. Esto no solo disminuye las tasas de éxito del reciclaje, sino que también crea confusión entre los residentes sobre los materiales aceptables en sus programas locales.",
+        "expandedContent1": "Para abordar estos desafíos, nuestra misión es proporcionar a los residentes del Condado de Miami-Dade información accesible y actualizada sobre el reciclaje. Al ofrecer una guía clara sobre las prácticas adecuadas de reciclaje, capacitamos a las personas para participar efectivamente en los esfuerzos de reciclaje de su comunidad, aumentando en última instancia la recuperación de materiales reciclables.",
+        "expandedContent2": "Nuestra plataforma, Recyclepedia, sirve como un recurso integral para obtener información precisa sobre lo que se puede reciclar. Ayuda a los usuarios a comprender los artículos aceptables en sus municipios y proporciona opciones alternativas de eliminación para aquellos no aceptados en sus programas de reciclaje. Al facilitar prácticas adecuadas de reciclaje, Recyclepedia contribuye a mayores tasas de reciclaje, reducción de la contaminación y mejora de la salud comunitaria.",
+        "button": {
+          "more": "Leer Más",
+          "less": "Mostrar Menos"
+        }
+      }
     }
   }
 }
