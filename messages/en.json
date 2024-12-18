@@ -22,6 +22,26 @@
         "about": "Learn about Recyclepedia",
         "contact": "Get in touch"
       }
+    },
+    "pageCards": {
+      "title": "Take Action",
+      "cards": [
+        {
+          "pageName": "Curbside Pickup",
+          "pageDesc": "See curbside pickup recycling options by municipality for your single family home, or alternatives for other buildings.",
+          "pageLink": "/curbside"
+        },
+        {
+          "pageName": "Recyclable Items",
+          "pageDesc": "Check where you can recycle various items.",
+          "pageLink": "/items"
+        },
+        {
+          "pageName": "Learn",
+          "pageDesc": "Explore recycling and get involved.",
+          "pageLink": "/learn"
+        }
+      ]
     }
   }
 }

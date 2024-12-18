@@ -22,6 +22,26 @@
         "about": "Conocer más sobre Recyclepedia",
         "contact": "Ponerme en contacto"
       }
+    },
+    "pageCards": {
+      "title": "Tomar Acción",
+      "cards": [
+        {
+          "pageName": "Recolección en la Acera",
+          "pageDesc": "Vea las opciones de reciclaje de recolección en la acera por municipio para su casa unifamiliar, o alternativas para otros edificios.",
+          "pageLink": "/curbside"
+        },
+        {
+          "pageName": "Artículos Reciclables",
+          "pageDesc": "Consulte dónde puede reciclar varios artículos.",
+          "pageLink": "/items"
+        },
+        {
+          "pageName": "Aprender",
+          "pageDesc": "Explore el reciclaje y participe.",
+          "pageLink": "/learn"
+        }
+      ]
     }
   }
 }
