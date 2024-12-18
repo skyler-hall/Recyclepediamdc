@@ -317,6 +317,29 @@
       }
     }
   },
+  "ContactPage": {
+    "title": "Contact Us",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Your email"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Your message"
+      },
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "messages": {
+      "success": "Your message has been sent successfully!",
+      "error": "Failed to send your message. Please try again."
+    }
+  },
   "Footer": {
     "nav": {
       "curbside": "Curbside",

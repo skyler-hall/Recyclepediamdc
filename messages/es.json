@@ -317,6 +317,29 @@
       }
     }
   },
+  "ContactPage": {
+    "title": "Contáctenos",
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Su nombre"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "Su correo electrónico"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Su mensaje"
+      },
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "messages": {
+      "success": "¡Su mensaje ha sido enviado exitosamente!",
+      "error": "No se pudo enviar su mensaje. Por favor intente nuevamente."
+    }
+  },
   "Footer": {
     "nav": {
       "curbside": "Recolección",
