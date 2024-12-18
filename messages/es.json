@@ -268,6 +268,13 @@
           "description": "¡Conviértete en voluntario y marca la diferencia en la comunidad!"
         }
       }
+    },
+    "watchAndLearn": {
+      "title": "Ver y Aprender",
+      "videos": {
+        "recyclingForKids": "Reciclaje para Niños | Aprende a Reducir, Reutilizar y Reciclar",
+        "recyclingProcess": "Proceso Completo de Reciclaje Explicado"
+      }
     }
   }
 }

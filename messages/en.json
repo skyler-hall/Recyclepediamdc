@@ -268,6 +268,13 @@
           "description": "Become a volunteer & make difference in the community!"
         }
       }
+    },
+    "watchAndLearn": {
+      "title": "Watch and Learn",
+      "videos": {
+        "recyclingForKids": "Recycling for Kids | Learn how to Reduce, Reuse, and Recycle",
+        "recyclingProcess": "Entire Recycling Process Explained"
+      }
     }
   }
 }

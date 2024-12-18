@@ -1,10 +1,24 @@
-import { learnVideos } from '@/data/learn/learnVideos';
+'use client';
+import { useTranslations } from 'next-intl';
 
 export default function WatchAndLearn() {
+  const t = useTranslations('LearnPage.watchAndLearn');
+
+  const learnVideos = [
+    {
+      title: t('videos.recyclingForKids'),
+      videoId: 'Fex-wvrOZf4?si=nfK5j6JH8LKNTeic',
+    },
+    {
+      title: t('videos.recyclingProcess'),
+      videoId: 'cNPEH0GOhRw?si=5REcFjBYd5PPpjms',
+    },
+  ];
+
   return (
     <div className='bg-white rounded-2xl shadow-lg p-6'>
       <h2 className='text-2xl font-semibold text-[#234E13] mb-4'>
-        Watch and Learn
+        {t('title')}
       </h2>
       <div className='flex flex-col gap-6'>
         {learnVideos.map((video, index) => (
