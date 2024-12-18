@@ -309,5 +309,13 @@
         "content": "DIG was honored to receive the 2021 Innovation Grant from The Children's Trust, which supported the creation of Recyclepedia. This initiative aims to improve recycling, reduce pollution, and enhance community health in Miami-Dade County. DIG collaborates closely with various municipalities, non-profits, and community partners to spread awareness and provide accurate data."
       }
     }
+  },
+  "Footer": {
+    "nav": {
+      "curbside": "Curbside",
+      "items": "Items",
+      "learn": "Learn",
+      "about": "About"
+    }
   }
 }
