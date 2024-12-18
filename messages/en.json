@@ -1,4 +1,11 @@
 {
+  "Nav": {
+    "curbside": "Curbside",
+    "items": "Items",
+    "learn": "Learn",
+    "about": "About",
+    "contact": "Contact"
+  },
   "HomePage": {
     "title": "Waste Made Simple",
     "subtitle": "Empowering Miami's Youth in Climate Action",

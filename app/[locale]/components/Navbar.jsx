@@ -5,11 +5,13 @@ import { Link } from '@/i18n/routing';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
 import TranslationToggle from './TranslationToggle';
+import { useTranslations } from 'next-intl';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navbarRef = useRef(null);
   const pathname = usePathname();
+  const t = useTranslations('Nav');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -78,7 +80,7 @@ function Navbar() {
               : 'text-gray-700 hover:text-green-600'
           }`}
         >
-          Curbside
+          {t('curbside')}
         </Link>
         <Link
           href='/items'
@@ -88,7 +90,7 @@ function Navbar() {
               : 'text-gray-700 hover:text-green-600'
           }`}
         >
-          Items
+          {t('items')}
         </Link>
         <Link
           href='/learn'
@@ -98,7 +100,7 @@ function Navbar() {
               : 'text-gray-700 hover:text-green-600'
           }`}
         >
-          Learn
+          {t('learn')}
         </Link>
         <Link
           href='/about'
@@ -108,13 +110,13 @@ function Navbar() {
               : 'text-gray-700 hover:text-green-600'
           }`}
         >
-          About
+          {t('about')}
         </Link>
         <Link
           href='/contact'
           className='text-lg px-5 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5'
         >
-          Contact
+          {t('contact')}
         </Link>
         <TranslationToggle />
       </ul>
@@ -135,7 +137,7 @@ function Navbar() {
             }`}
             onClick={closeMenu}
           >
-            Curbside
+            {t('curbside')}
           </Link>
           <Link
             href='/items'
@@ -146,7 +148,7 @@ function Navbar() {
             }`}
             onClick={closeMenu}
           >
-            Items
+            {t('items')}
           </Link>
           <Link
             href='/learn'
@@ -157,7 +159,7 @@ function Navbar() {
             }`}
             onClick={closeMenu}
           >
-            Learn
+            {t('learn')}
           </Link>
           <Link
             href='/about'
@@ -168,14 +170,14 @@ function Navbar() {
             }`}
             onClick={closeMenu}
           >
-            About
+            {t('about')}
           </Link>
           <Link
-            href='/#contact'
+            href='/contact'
             className='text-lg px-6 py-2.5 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5'
             onClick={closeMenu}
           >
-            Contact
+            {t('contact')}
           </Link>
         </ul>
       </div>

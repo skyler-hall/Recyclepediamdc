@@ -1,4 +1,11 @@
 {
+  "Nav": {
+    "curbside": "Recolección",
+    "items": "Artículos",
+    "learn": "Aprender",
+    "about": "Acerca",
+    "contact": "Contacto"
+  },
   "HomePage": {
     "title": "Gestión de Residuos Simplificada",
     "subtitle": "Empoderando a la Juventud de Miami en la Acción Climática",
