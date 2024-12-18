@@ -1,20 +1,16 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 function Partners() {
+  const t = useTranslations('AboutPage.ourStory.partners');
+
   return (
     <section className='flex flex-col items-center justify-center p-8 lg:p-16 rounded-lg text-center bg-lightGreen'>
       <h2 className='text-2xl font-semibold text-darkGreen mb-4'>
-        Our Partners
+        {t('title')}
       </h2>
-      <p className='mt-4 text-gray-700 text-center text-lg'>
-        DIG was honored to receive the 2021 Innovation Grant from The Children's
-        Trust, which supported the creation of Recyclepedia. This initiative
-        aims to improve recycling, reduce pollution, and enhance community
-        health in Miami-Dade County. DIG collaborates closely with various
-        municipalities, non-profits, and community partners to spread awareness
-        and provide accurate data.
-      </p>
+      <p className='mt-4 text-gray-700 text-center text-lg'>{t('content')}</p>
       <div className='flex flex-wrap justify-center items-center gap-8 mt-8'>
         {/* Logos */}
         <Link
