@@ -48,7 +48,18 @@
           "pageDesc": "Explore recycling and get involved.",
           "pageLink": "/learn"
         }
-      ]
+      ],
+      "NavigationCard": {
+        "select": "Select",
+        "explore": "Explore",
+        "singleFamily": "Single-Family",
+        "condo": "Please contact your administrator for information on a private hauler in your area. Your condo should provide cardboard recycling at the least.",
+        "business": "Please contact a private hauler in your area.",
+        "types": {
+          "Condo": "Condo",
+          "Business": "Business"
+        }
+      }
     },
     "newsletter": {
       "title": "Subscribe to our Newsletter",

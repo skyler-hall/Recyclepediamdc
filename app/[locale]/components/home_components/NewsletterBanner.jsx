@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import NewsletterPopup from './home_popup/NewsletterPopup';
 import { LuRecycle } from 'react-icons/lu';
 import { IconContext } from 'react-icons';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 const NewsletterBanner = () => {
   const t = useTranslations('HomePage.newsletter');

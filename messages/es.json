@@ -48,7 +48,18 @@
           "pageDesc": "Explore el reciclaje y participe.",
           "pageLink": "/learn"
         }
-      ]
+      ],
+      "NavigationCard": {
+        "select": "Seleccionar",
+        "explore": "Explorar",
+        "singleFamily": "Familia unifamiliar",
+        "condo": "Póngase en contacto con su administrador para obtener información sobre un transportista privado en su área. Su condominio debe proporcionar al menos reciclaje de cartón.",
+        "business": "Póngase en contacto con un transportista privado en su área.",
+        "types": {
+          "Condo": "Condominio",
+          "Business": "Negocio"
+        }
+      }
     },
     "newsletter": {
       "title": "Suscríbete a nuestro Boletín",
@@ -115,7 +126,7 @@
     "title": "Encuentra Lugares de Reciclaje",
     "subtitle": "Descubre dónde reciclar artículos específicos en tu área",
     "search": {
-      "placeholder": "Ingresa el nombre de un artículo (ej., Revistas)",
+      "placeholder": "Ingresa el nombre de un artículo (ej., Magazines)",
       "button": "Buscar Lugares",
       "noResults": "No se encontraron lugares para \"{query}\".",
       "initialMessage": "Ingresa un artículo y presiona \"Buscar\" para encontrar lugares de reciclaje.",
