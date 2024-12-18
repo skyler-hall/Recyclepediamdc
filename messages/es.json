@@ -133,6 +133,101 @@
   },
   "LearnPage": {
     "title": "Aprende Sobre el Reciclaje",
-    "subtitle": "Explora la educación sobre el reciclaje y participa en tu comunidad"
+    "subtitle": "Explora la educación sobre el reciclaje y participa en tu comunidad",
+    "recyclingTips": {
+      "title": "Consejos de Reciclaje",
+      "selectPrompt": "Selecciona un artículo para aprender cómo reciclarlo",
+      "howToRecycle": "Cómo reciclar {item}",
+      "items": {
+        "batteries": {
+          "name": "Baterías",
+          "tip": "Las baterías no deben tirarse a la basura. Llévalas a un centro de reciclaje o punto de recolección de baterías."
+        },
+        "ceramics": {
+          "name": "Cerámica",
+          "tip": "La cerámica no se puede reciclar con el vidrio regular. Deséchala en tu basura normal."
+        },
+        "christmasLights": {
+          "name": "Luces de Navidad",
+          "tip": "Las luces de Navidad viejas pueden reciclarse en lugares designados para residuos electrónicos."
+        },
+        "foodWaste": {
+          "name": "Residuos de Alimentos",
+          "tip": "Los residuos de alimentos pueden convertirse en compost. Algunas ciudades también aceptan restos de comida para reciclaje."
+        },
+        "juicePouches": {
+          "name": "Bolsitas de Jugo",
+          "tip": "Las bolsitas de jugo no son reciclables en la mayoría de los programas de recolección. Consulta con programas locales para su disposición especial."
+        },
+        "keurigCup": {
+          "name": "Cápsulas Keurig",
+          "tip": "Las cápsulas Keurig (K-Cups) pueden reciclarse si se separan adecuadamente. Busca el símbolo de reciclaje y retira la tapa de aluminio."
+        },
+        "glass": {
+          "name": "Vidrio",
+          "tip": "Las botellas y frascos de vidrio suelen ser reciclables, pero verifica si tu programa local de reciclaje los acepta."
+        },
+        "medicine": {
+          "name": "Medicamentos",
+          "tip": "Los medicamentos vencidos o sin usar deben llevarse a sitios de recolección designados. No los tires por el inodoro."
+        },
+        "bottles": {
+          "name": "Botellas de Plástico",
+          "tip": "Las botellas de plástico son reciclables. Asegúrate de que estén limpias y libres de residuos."
+        },
+        "packingPeanuts": {
+          "name": "Relleno de Embalaje",
+          "tip": "El relleno de embalaje a veces puede reciclarse, o puedes reutilizarlo."
+        },
+        "pizzaBoxes": {
+          "name": "Cajas de Pizza",
+          "tip": "Las cajas de pizza con manchas de grasa generalmente no son reciclables. Retira el exceso de grasa antes de reciclar."
+        },
+        "plasticBags": {
+          "name": "Bolsas de Plástico",
+          "tip": "Las bolsas de plástico no deben colocarse en el reciclaje doméstico. Recíclalas en puntos de recolección designados."
+        },
+        "plasticButterContainers": {
+          "name": "Recipientes de Mantequilla",
+          "tip": "Los recipientes de mantequilla de plástico son generalmente reciclables si están limpios."
+        },
+        "plasticCups": {
+          "name": "Vasos de Plástico",
+          "tip": "Los vasos de plástico son reciclables, pero consulta con tu programa local para guías específicas."
+        },
+        "plasticPlates": {
+          "name": "Platos de Plástico",
+          "tip": "Los platos de plástico a menudo no son reciclables, pero algunos programas pueden aceptarlos."
+        },
+        "plasticUtensils": {
+          "name": "Cubiertos de Plástico",
+          "tip": "Los cubiertos de plástico generalmente no son reciclables, pero consulta con tu programa local de reciclaje."
+        },
+        "rubberGloves": {
+          "name": "Guantes de Goma",
+          "tip": "Los guantes de goma deben desecharse en la basura, ya que generalmente no son reciclables."
+        },
+        "styrofoam": {
+          "name": "Poliestireno",
+          "tip": "El poliestireno no es ampliamente reciclable. Algunas áreas ofrecen lugares de entrega para reciclaje."
+        },
+        "teaBags": {
+          "name": "Bolsas de Té",
+          "tip": "Las bolsas de té hechas de papel pueden convertirse en compost, pero las que tienen materiales sintéticos deben desecharse en la basura."
+        },
+        "waxPaper": {
+          "name": "Papel Encerado",
+          "tip": "El papel encerado no es reciclable en la mayoría de los programas de recolección."
+        },
+        "wrappingPaper": {
+          "name": "Papel de Regalo",
+          "tip": "El papel de regalo con purpurina, papel metálico o cinta adhesiva no es reciclable. El papel de regalo simple sí puede reciclarse."
+        },
+        "yogurtCup": {
+          "name": "Envases de Yogur",
+          "tip": "Los envases de yogur generalmente son reciclables si están limpios. Consulta con tu programa local de reciclaje."
+        }
+      }
+    }
   }
 }
