@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
+import TranslationToggle from './TranslationToggle';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,8 +53,9 @@ function Navbar() {
         </h1>
       </Link>
 
-      {/* Mobile menu button */}
-      <div className='md:hidden h-full flex flex-col justify-center'>
+      {/* Mobile menu button and translation toggle */}
+      <div className='md:hidden h-full flex items-center gap-4'>
+        <TranslationToggle />
         <button
           onClick={toggleMenu}
           className='focus:outline-none hover:bg-gray-100 p-2 rounded-lg transition-colors'
@@ -114,6 +116,7 @@ function Navbar() {
         >
           Contact
         </Link>
+        <TranslationToggle />
       </ul>
 
       {/* Dropwdown menu for mobile screens*/}
