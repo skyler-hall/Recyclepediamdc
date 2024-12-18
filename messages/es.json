@@ -42,6 +42,12 @@
           "pageLink": "/learn"
         }
       ]
+    },
+    "newsletter": {
+      "title": "Suscríbete a nuestro Boletín",
+      "description": "¡Mantente al día con las últimas noticias sobre sostenibilidad, iniciativas y eventos de Dream in Green!",
+      "button": "Suscribirse",
+      "link": "https://dreamingreen.org/latest-news/"
     }
   }
 }
