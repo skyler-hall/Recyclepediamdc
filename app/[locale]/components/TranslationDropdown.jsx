@@ -4,7 +4,7 @@ import { useState, useTransition } from 'react';
 import { HiChevronDown } from 'react-icons/hi';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 
-function TranslationToggle() {
+function TranslationDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -68,4 +68,4 @@ function TranslationToggle() {
   );
 }
 
-export default TranslationToggle;
+export default TranslationDropdown;

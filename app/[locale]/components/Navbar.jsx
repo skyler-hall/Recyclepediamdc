@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from '@/i18n/routing';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
-import TranslationToggle from './TranslationToggle';
+import TranslationDropdown from './TranslationDropdown';
 import { useTranslations } from 'next-intl';
 
 function Navbar() {
@@ -42,7 +42,7 @@ function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className='fixed z-50 top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 flex flex-row justify-between items-center bg-white/90 backdrop-blur-sm h-16 rounded-xl pl-6 pr-4 md:pl-6 md:pr-6 shadow-lg border border-gray-200'
+      className='fixed z-50 top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 flex flex-row justify-between items-center bg-white/90 backdrop-blur-sm h-16 rounded-xl px-4 md:px-6 shadow-lg border border-gray-200'
     >
       <Link
         href='/'
@@ -56,8 +56,8 @@ function Navbar() {
       </Link>
 
       {/* Mobile menu button and translation toggle */}
-      <div className='md:hidden h-full flex items-center gap-4'>
-        <TranslationToggle />
+      <div className='md:hidden h-full flex items-center gap-2'>
+        <TranslationDropdown />
         <button
           onClick={toggleMenu}
           className='focus:outline-none hover:bg-gray-100 p-2 rounded-lg transition-colors'
@@ -118,7 +118,7 @@ function Navbar() {
         >
           {t('contact')}
         </Link>
-        <TranslationToggle />
+        <TranslationDropdown />
       </ul>
 
       {/* Dropwdown menu for mobile screens*/}
